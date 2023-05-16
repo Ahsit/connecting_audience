@@ -1,0 +1,56 @@
+name: ricoz_app
+description: A new Flutter project.
+
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+
+dependencies:
+  carousel_slider: ^4.2.1
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_svg: ^1.1.6
+  local_auth: ^2.1.6
+
+dev_dependencies:
+
+  flutter_lints: ^2.0.0
+  dotted_border: ^2.0.0+3
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+
+ 
+  uses-material-design: true
+
+  
+  assets:
+    - assets/images/
+    - assets/image 1 (3).png
+    - assets/image 125 (4).png
+    - assets/
+  fonts:
+    - family: Cormorant Garamond
+      fonts:
+        - asset: assets/fonts/CormorantGaramond-Bold.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+    - family: Lora
+      fonts:
+        - asset: assets/fonts/Lora-VariableFont_wght.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+    - family: Roboto Slab
+      fonts:
+        - asset: assets/fonts/RobotoSlab-VariableFont_wght.ttf
+    - family: Rowdies
+      fonts:
+        - asset: assets/fonts/Rowdies-Bold.ttf
