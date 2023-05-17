@@ -3,13 +3,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/Screen/courses/add_management.dart';
-import 'package:ricoz_app/Screen/courses/email_marketing.dart';
+import 'package:ricoz_app/Screen/courses/Adwords.dart';
 import 'package:ricoz_app/Screen/courses/graphics_design.dart';
-import 'package:ricoz_app/Screen/courses/market_strategy.dart';
+import 'package:ricoz_app/Screen/courses/Digital_marketing.dart';
 import 'package:ricoz_app/Screen/courses/social_media_management.dart';
 import 'package:ricoz_app/Screen/courses/video_edit.dart';
 import 'package:ricoz_app/Screen/courses/web_design.dart';
-import 'package:ricoz_app/Screen/courses/webs_dev.dart';
+import 'package:ricoz_app/Screen/courses/performance_marketing.dart';
 import 'package:ricoz_app/Screen/service%20Page/service1_socialmedia.dart';
 import 'package:ricoz_app/Screen/service%20Page/service2_ads.dart';
 import 'package:ricoz_app/Screen/service%20Page/service3_graphic.dart';
@@ -463,9 +463,8 @@ class _HomePageState extends State<HomePage> {
                                       builder: (context) => const WebDesign(),
                                     ));
                               })),
-                              _buildCircleImage(
-                                  '    Ads\nManager', 'assets/image 165.png',
-                                  (() {
+                              _buildCircleImage('         Ads\nManagement',
+                                  'assets/image 165.png', (() {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -479,7 +478,7 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              _buildCircleImage('Video\nEditing',
+                              _buildCircleImage(' Video\nEditing',
                                   'assets/images/videoediting.png', (() {
                                 Navigator.push(
                                     context,
@@ -487,29 +486,30 @@ class _HomePageState extends State<HomePage> {
                                       builder: (context) => const VideoEd(),
                                     ));
                               })),
-                              _buildCircleImage('   Email\nMarketing',
-                                  'assets/images/emailmarketing.png', (() {
+                              _buildCircleImage('   Google\n  Adwords',
+                                  'assets/image 181.png', (() {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const EmailMarket(),
+                                      builder: (context) =>
+                                          const Adwordscourse(),
                                     ));
                               })),
-                              _buildCircleImage('     Market\nManagement',
+                              _buildCircleImage('Performance\n   Marketing',
                                   'assets/images/marketmanagement.png', (() {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const WebDev(),
+                                      builder: (context) => const Performance(),
                                     ));
                               })),
-                              _buildCircleImage('  Search\n   Engine',
+                              _buildCircleImage('    Digital\nMAerketing',
                                   'assets/images/seachengine.png', (() {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          const StrategyMarket(),
+                                          const DigitalMarketing(),
                                     ));
                               })),
                             ],

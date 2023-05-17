@@ -2,14 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/Services/colors.dart';
-import 'package:ricoz_app/pages/Notification_page.dart';
 import 'package:ricoz_app/pages/help/help_page.dart';
-import 'package:ricoz_app/pages/home_page.dart';
 
 import 'package:ricoz_app/pages/menu_page.dart';
 
-class SocialMedia extends StatelessWidget {
-  const SocialMedia({Key? key}) : super(key: key);
+import '../../pages/Notification_page.dart';
+import '../../pages/home_page.dart';
+
+class DigitalMarketing extends StatelessWidget {
+  const DigitalMarketing({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -97,8 +98,7 @@ class SocialMedia extends StatelessWidget {
                       width: 358,
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image:
-                                  AssetImage('assets/course/socialmedia.png'))),
+                              image: AssetImage('assets/course/digital.png'))),
                     )),
                 Padding(
                   padding: const EdgeInsets.only(left: 15, top: .3),
@@ -131,7 +131,7 @@ class SocialMedia extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 110, left: 50),
                   child: Text(
-                    'Best social media\nmanagement from ricoz',
+                    'Best Digital Marketing\ncourse from ricoz',
                     style: TextStyle(
                         color: Pallete.whiteColor,
                         fontWeight: FontWeight.bold,
@@ -169,7 +169,7 @@ class SocialMedia extends StatelessWidget {
                             color: Color.fromARGB(185, 61, 37, 28)),
                         child: Center(
                           child: Text(
-                            '#bestsmmcourse',
+                            '#bestdmcourse',
                             style: TextStyle(
                                 color: Pallete.whiteColor,
                                 fontSize: 14,
@@ -183,7 +183,7 @@ class SocialMedia extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 5),
+              padding: const EdgeInsets.only(left: 10, top: 5),
               child: Container(
                 height: 1000,
                 width: 390,
@@ -214,7 +214,7 @@ class SocialMedia extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: 22),
                           child: Text(
-                            '  SMM Course   ',
+                            '  DM Course   ',
                             style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
@@ -249,7 +249,7 @@ class SocialMedia extends StatelessWidget {
                     ),
                     Center(
                       child: Text(
-                        'Social Media Management',
+                        'Graphics Design',
                         style: TextStyle(
                             fontWeight: FontWeight.w700, fontSize: 20),
                       ),
@@ -273,7 +273,7 @@ class SocialMedia extends StatelessWidget {
                       child: RichText(
                         text: TextSpan(
                           text:
-                              'Manage Your Social Strategies. Expand your\nonline audience and establish your social\nbrand in five courses ',
+                              'There are 26 modules to explore, all created by Google trainers, packed full of practical exercises. ',
                           style: TextStyle(
                               color: Pallete.black,
                               fontSize: 16,
@@ -314,7 +314,7 @@ class SocialMedia extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: Text(
-                        '• English proficiency\n• Prior knowledge of marketing.',
+                        '• English proficiency\n• Prior knowledge of computer.',
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w400),
                       ),

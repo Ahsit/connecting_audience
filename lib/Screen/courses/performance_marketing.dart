@@ -8,8 +8,8 @@ import 'package:ricoz_app/pages/home_page.dart';
 
 import 'package:ricoz_app/pages/menu_page.dart';
 
-class SocialMedia extends StatelessWidget {
-  const SocialMedia({Key? key}) : super(key: key);
+class Performance extends StatelessWidget {
+  const Performance({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ class SocialMedia extends StatelessWidget {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               image:
-                                  AssetImage('assets/course/socialmedia.png'))),
+                                  AssetImage('assets/course/performance.png'))),
                     )),
                 Padding(
                   padding: const EdgeInsets.only(left: 15, top: .3),
@@ -131,7 +131,7 @@ class SocialMedia extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 110, left: 50),
                   child: Text(
-                    'Best social media\nmanagement from ricoz',
+                    'Best Performance Marketing\ncourse from ricoz',
                     style: TextStyle(
                         color: Pallete.whiteColor,
                         fontWeight: FontWeight.bold,
@@ -169,7 +169,7 @@ class SocialMedia extends StatelessWidget {
                             color: Color.fromARGB(185, 61, 37, 28)),
                         child: Center(
                           child: Text(
-                            '#bestsmmcourse',
+                            '#bestpmcourse',
                             style: TextStyle(
                                 color: Pallete.whiteColor,
                                 fontSize: 14,
@@ -183,7 +183,7 @@ class SocialMedia extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 5),
+              padding: const EdgeInsets.only(left: 10, top: 5),
               child: Container(
                 height: 1000,
                 width: 390,
@@ -214,7 +214,7 @@ class SocialMedia extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: 22),
                           child: Text(
-                            '  SMM Course   ',
+                            '  PM Course   ',
                             style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
@@ -249,7 +249,7 @@ class SocialMedia extends StatelessWidget {
                     ),
                     Center(
                       child: Text(
-                        'Social Media Management',
+                        'Performance Marketing',
                         style: TextStyle(
                             fontWeight: FontWeight.w700, fontSize: 20),
                       ),
@@ -269,11 +269,11 @@ class SocialMedia extends StatelessWidget {
                       height: 10,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 20),
+                      padding: const EdgeInsets.only(left: 20, right: 20),
                       child: RichText(
                         text: TextSpan(
                           text:
-                              'Manage Your Social Strategies. Expand your\nonline audience and establish your social\nbrand in five courses ',
+                              'Focuses on driving conversions and generating leads by targeting online tools, strategies, and methodologies.',
                           style: TextStyle(
                               color: Pallete.black,
                               fontSize: 16,
