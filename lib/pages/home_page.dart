@@ -2,14 +2,12 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:ricoz_app/Screen/courses/add_management.dart';
 import 'package:ricoz_app/Screen/courses/Adwords.dart';
-import 'package:ricoz_app/Screen/courses/graphics_design.dart';
-import 'package:ricoz_app/Screen/courses/Digital_marketing.dart';
-import 'package:ricoz_app/Screen/courses/social_media_management.dart';
-import 'package:ricoz_app/Screen/courses/video_edit.dart';
-import 'package:ricoz_app/Screen/courses/web_design.dart';
+
+import 'package:ricoz_app/Screen/courses/add_management.dart';
 import 'package:ricoz_app/Screen/courses/performance_marketing.dart';
+import 'package:ricoz_app/Screen/courses/social_media_management.dart';
+import 'package:ricoz_app/Screen/courses/web_design.dart';
 import 'package:ricoz_app/Screen/service%20Page/service1_socialmedia.dart';
 import 'package:ricoz_app/Screen/service%20Page/service2_ads.dart';
 import 'package:ricoz_app/Screen/service%20Page/service3_graphic.dart';
@@ -24,6 +22,10 @@ import 'package:ricoz_app/pages/expandedSection/About_us.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
 import 'package:ricoz_app/pages/search_page.dart';
+
+import '../Screen/courses/Digital_marketing.dart';
+import '../Screen/courses/graphics_design.dart';
+import '../Screen/courses/video_edit.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -70,7 +72,7 @@ class _HomePageState extends State<HomePage> {
     'Google Ads',
     'Graphic Design',
   ];
-  List<String> imageText3 = ['Facebook', 'Instagram', 'Linked in', 'Twitter,'];
+  List<String> imageText3 = ['Facebook', 'Instagram', 'Linked in', 'Twitter'];
   List<String> imageText4 = [
     'Google Ads',
     'Youtube Ads',
