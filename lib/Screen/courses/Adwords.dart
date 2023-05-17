@@ -84,20 +84,23 @@ class Adwordscourse extends StatelessWidget {
                           )),
                     ),
                   ),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomePage(),
-                            ));
-                      },
-                      child: Text(
-                        "Course Detail",
-                        style: TextStyle(
-                            color: Pallete.whiteColor,
-                            fontWeight: FontWeight.w400),
-                      ))
+                  SizedBox(
+                    height: 30,
+                    child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomePage(),
+                              ));
+                        },
+                        child: Text(
+                          "Course Detail",
+                          style: TextStyle(
+                              color: Pallete.whiteColor,
+                              fontWeight: FontWeight.w400),
+                        )),
+                  )
                 ]),
                 Stack(
                   children: [
