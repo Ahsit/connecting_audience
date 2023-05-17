@@ -156,7 +156,7 @@ class Performance extends StatelessWidget {
                           children: [
                             Container(
                               height: 45,
-                              width: 90,
+                              width: 80,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                   color: Color.fromARGB(185, 61, 37, 28)),
@@ -165,7 +165,7 @@ class Performance extends StatelessWidget {
                                   'Marketing',
                                   style: TextStyle(
                                       color: Pallete.whiteColor,
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
@@ -175,7 +175,7 @@ class Performance extends StatelessWidget {
                             ),
                             Container(
                               height: 45,
-                              width: 130,
+                              width: 120,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                   color: Color.fromARGB(185, 61, 37, 28)),
@@ -184,7 +184,7 @@ class Performance extends StatelessWidget {
                                   '#bestpmcourse',
                                   style: TextStyle(
                                       color: Pallete.whiteColor,
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
@@ -197,7 +197,7 @@ class Performance extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
                     child: Container(
-                      height: 1000,
+                      height: 950,
                       width: 390,
                       decoration: BoxDecoration(
                         color: Pallete.whiteColor,
@@ -232,7 +232,7 @@ class Performance extends StatelessWidget {
                                 child: Text(
                                   '  PM Course   ',
                                   style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.w400,
                                       color: Pallete.fontcolor2),
                                 ),
@@ -278,7 +278,7 @@ class Performance extends StatelessWidget {
                             child: Text(
                               'Course Details',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                           ),
                           SizedBox(
@@ -292,8 +292,8 @@ class Performance extends StatelessWidget {
                                     'Focuses on driving conversions and generating leads by targeting online tools, strategies, and methodologies.',
                                 style: TextStyle(
                                     color: Pallete.black,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400),
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w300),
                                 children: [
                                   TextSpan(
                                       text: 'more',
@@ -321,7 +321,7 @@ class Performance extends StatelessWidget {
                             child: Text(
                               'Course Requirement',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                           ),
                           SizedBox(
@@ -332,7 +332,7 @@ class Performance extends StatelessWidget {
                             child: Text(
                               '• English proficiency\n• Prior knowledge of marketing.',
                               style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w400),
+                                  fontSize: 14, fontWeight: FontWeight.w300),
                             ),
                           ),
                           SizedBox(
@@ -343,7 +343,7 @@ class Performance extends StatelessWidget {
                             child: Text(
                               'Course Duration',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                           ),
                           SizedBox(
@@ -367,7 +367,7 @@ class Performance extends StatelessWidget {
                             child: Text(
                               'Course Rating',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                           ),
                           SizedBox(
@@ -445,7 +445,7 @@ class Performance extends StatelessWidget {
                             child: Text(
                               'Payment Details',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                           ),
                           SizedBox(
@@ -479,7 +479,7 @@ class Performance extends StatelessWidget {
                                     Text(
                                       'Special Pack',
                                       style: TextStyle(
-                                          fontSize: 19,
+                                          fontSize: 17,
                                           fontWeight: FontWeight.w500),
                                     ),
                                     SizedBox(
@@ -542,7 +542,7 @@ class Performance extends StatelessWidget {
                                     Text(
                                       'Special Pack Pro',
                                       style: TextStyle(
-                                          fontSize: 19,
+                                          fontSize: 17,
                                           fontWeight: FontWeight.w500),
                                     ),
                                     SizedBox(
@@ -605,7 +605,7 @@ class Performance extends StatelessWidget {
                                     Text(
                                       'Corporate Pack',
                                       style: TextStyle(
-                                          fontSize: 19,
+                                          fontSize: 17,
                                           fontWeight: FontWeight.w500),
                                     ),
                                     SizedBox(
@@ -655,7 +655,8 @@ class Performance extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 20, right: 20),
                             child: Text(
                               'In case of any queries, refer to the FAQs or contact us via the ‘help’ section below',
-                              style: TextStyle(fontSize: 16),
+                              style: TextStyle(
+                                  fontSize: 13, fontWeight: FontWeight.w300),
                             ),
                           ),
                           SizedBox(
@@ -723,7 +724,7 @@ class Performance extends StatelessWidget {
                             child: Text(
                               '*By accepting you agree to fulfill all the collaboration requirements and terms & conditions mentioned.',
                               style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w400),
+                                  fontSize: 13, fontWeight: FontWeight.w300),
                             ),
                           ),
                           SizedBox(

@@ -164,7 +164,7 @@ class AdsManagement extends StatelessWidget {
                                 'Computer',
                                 style: TextStyle(
                                     color: Pallete.whiteColor,
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.w500),
                               ),
                             ),
@@ -183,7 +183,7 @@ class AdsManagement extends StatelessWidget {
                                 '#bestadsmcourse',
                                 style: TextStyle(
                                     color: Pallete.whiteColor,
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.w500),
                               ),
                             ),
@@ -196,7 +196,7 @@ class AdsManagement extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 5),
                   child: Container(
-                    height: 1000,
+                    height: 950,
                     width: 390,
                     decoration: BoxDecoration(
                       color: Pallete.whiteColor,
@@ -220,7 +220,7 @@ class AdsManagement extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(top: 20),
                               child: Container(
-                                height: 20,
+                                height: 17,
                                 width: 1,
                                 color: Pallete.fontcolor2,
                               ),
@@ -230,7 +230,7 @@ class AdsManagement extends StatelessWidget {
                               child: Text(
                                 '  AMT Course   ',
                                 style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.w400,
                                     color: Pallete.fontcolor2),
                               ),
@@ -290,8 +290,8 @@ class AdsManagement extends StatelessWidget {
                                   'Manage Your Social Strategies. Expand your online audience and establish your social brand in five courses.',
                               style: TextStyle(
                                   color: Pallete.black,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w300),
                               children: [
                                 TextSpan(
                                     text: 'more',
@@ -319,7 +319,7 @@ class AdsManagement extends StatelessWidget {
                           child: Text(
                             'Course Requirement',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontWeight: FontWeight.bold, fontSize: 15),
                           ),
                         ),
                         SizedBox(
@@ -330,7 +330,7 @@ class AdsManagement extends StatelessWidget {
                           child: Text(
                             '• English proficiency\n• Prior knowledge of computer.',
                             style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400),
+                                fontSize: 14, fontWeight: FontWeight.w300),
                           ),
                         ),
                         SizedBox(
@@ -341,7 +341,7 @@ class AdsManagement extends StatelessWidget {
                           child: Text(
                             'Course Duration',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontWeight: FontWeight.bold, fontSize: 15),
                           ),
                         ),
                         SizedBox(
@@ -365,7 +365,7 @@ class AdsManagement extends StatelessWidget {
                           child: Text(
                             'Course Rating',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontWeight: FontWeight.bold, fontSize: 15),
                           ),
                         ),
                         SizedBox(
@@ -441,7 +441,7 @@ class AdsManagement extends StatelessWidget {
                           child: Text(
                             'Payment Details',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontWeight: FontWeight.bold, fontSize: 15),
                           ),
                         ),
                         SizedBox(
@@ -475,7 +475,7 @@ class AdsManagement extends StatelessWidget {
                                   Text(
                                     'Special Pack',
                                     style: TextStyle(
-                                        fontSize: 19,
+                                        fontSize: 17,
                                         fontWeight: FontWeight.w500),
                                   ),
                                   SizedBox(
@@ -537,7 +537,7 @@ class AdsManagement extends StatelessWidget {
                                   Text(
                                     'Special Pack Pro',
                                     style: TextStyle(
-                                        fontSize: 19,
+                                        fontSize: 17,
                                         fontWeight: FontWeight.w500),
                                   ),
                                   SizedBox(
@@ -599,7 +599,7 @@ class AdsManagement extends StatelessWidget {
                                   Text(
                                     'Corporate Pack',
                                     style: TextStyle(
-                                        fontSize: 19,
+                                        fontSize: 17,
                                         fontWeight: FontWeight.w500),
                                   ),
                                   SizedBox(
@@ -638,7 +638,7 @@ class AdsManagement extends StatelessWidget {
                           child: Text(
                             'Help & Support',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontWeight: FontWeight.bold, fontSize: 15),
                           ),
                         ),
                         SizedBox(
@@ -648,7 +648,8 @@ class AdsManagement extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             'In case of any queries, refer to the FAQs or contact us via the ‘help’ section below',
-                            style: TextStyle(fontSize: 16),
+                            style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w300),
                           ),
                         ),
                         SizedBox(
@@ -716,7 +717,7 @@ class AdsManagement extends StatelessWidget {
                           child: Text(
                             '*By accepting you agree to fulfill all the collaboration requirements and terms & conditions mentioned.',
                             style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400),
+                                fontSize: 13, fontWeight: FontWeight.w300),
                           ),
                         ),
                         SizedBox(
