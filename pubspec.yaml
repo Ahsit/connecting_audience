@@ -39,6 +39,7 @@ flutter:
     - assets/
     - assets/course/
     - assets/Handling/
+    - assets/ads/
   fonts:
     - family: Cormorant Garamond
       fonts:

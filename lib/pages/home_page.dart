@@ -2,6 +2,12 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/facebookads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/googleads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/instagramads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/linkedinads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/twitterads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/youtubeads.dart';
 import 'package:ricoz_app/Screen/Handling/Facebook.dart';
 import 'package:ricoz_app/Screen/Handling/GMB.dart';
 import 'package:ricoz_app/Screen/Handling/Instagram.dart';
@@ -842,14 +848,41 @@ class _HomePageState extends State<HomePage> {
                               _buildCircleImage(
                                 'Youtube\n    Ads',
                                 'assets/logo20.png',
-                                (() {}),
+                                (() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Youtubeads(),
+                                      ));
+                                }),
                               ),
-                              _buildCircleImage('Google\n  Ads',
-                                  'assets/image 181.png', (() {})),
-                              _buildCircleImage('FaceBook\n      Ads',
-                                  'assets/logo17.png', (() {})),
-                              _buildCircleImage('Linked in\n     Ads',
-                                  'assets/logo19.png', (() {})),
+                              _buildCircleImage(
+                                  'Google\n  Ads', 'assets/image 181.png', (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const googleads(),
+                                    ));
+                              })),
+                              _buildCircleImage(
+                                  'FaceBook\n      Ads', 'assets/logo17.png',
+                                  (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const facebookads(),
+                                    ));
+                              })),
+                              _buildCircleImage(
+                                  'Linked in\n     Ads', 'assets/logo19.png',
+                                  (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const linkedinads(),
+                                    ));
+                              })),
                             ],
                           ),
                           SizedBox(height: 20),
@@ -858,11 +891,25 @@ class _HomePageState extends State<HomePage> {
                               Padding(
                                 padding:
                                     const EdgeInsets.only(left: 30, right: 30),
-                                child: _buildCircleImage('Instagram\n      Ads',
-                                    'assets/logo18.png', (() {})),
+                                child: _buildCircleImage(
+                                    'Instagram\n      Ads', 'assets/logo18.png',
+                                    (() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const instagramads(),
+                                      ));
+                                })),
                               ),
-                              _buildCircleImage('Twitter\n  Ads',
-                                  'assets/logo21.png', (() {})),
+                              _buildCircleImage(
+                                  'Twitter\n  Ads', 'assets/logo21.png', (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const twitterads(),
+                                    ));
+                              })),
                             ],
                           ),
                         ],
