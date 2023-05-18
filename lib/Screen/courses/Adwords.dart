@@ -5,10 +5,11 @@ import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
 import 'package:ricoz_app/pages/help/help_page.dart';
 import 'package:ricoz_app/pages/home_page.dart';
+
 import 'package:ricoz_app/pages/menu_page.dart';
 
-class AdsManagement extends StatelessWidget {
-  const AdsManagement({Key? key}) : super(key: key);
+class Adwordscourse extends StatelessWidget {
+  const Adwordscourse({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -110,8 +111,8 @@ class AdsManagement extends StatelessWidget {
                           width: 358,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/course/adsmanagement.png'))),
+                                  image:
+                                      AssetImage('assets/course/adwords.png'))),
                         )),
                     Padding(
                       padding: const EdgeInsets.only(left: 15, top: .3),
@@ -145,7 +146,7 @@ class AdsManagement extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 110, left: 50),
                       child: Text(
-                        'Best Ads Management \ncourse from ricoz',
+                        'Best Google Adwords\ncourse from ricoz',
                         style: TextStyle(
                             color: Pallete.whiteColor,
                             fontWeight: FontWeight.bold,
@@ -158,7 +159,7 @@ class AdsManagement extends StatelessWidget {
                         children: [
                           Container(
                             height: 45,
-                            width: 90,
+                            width: 80,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Color.fromARGB(185, 61, 37, 28)),
@@ -177,13 +178,13 @@ class AdsManagement extends StatelessWidget {
                           ),
                           Container(
                             height: 45,
-                            width: 130,
+                            width: 120,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Color.fromARGB(185, 61, 37, 28)),
                             child: Center(
                               child: Text(
-                                '#bestadsmcourse',
+                                '#bestgadsscourse',
                                 style: TextStyle(
                                     color: Pallete.whiteColor,
                                     fontSize: 12,
@@ -231,7 +232,7 @@ class AdsManagement extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(top: 22),
                               child: Text(
-                                '  AMT Course   ',
+                                '  GADs Course   ',
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,
@@ -266,7 +267,7 @@ class AdsManagement extends StatelessWidget {
                         ),
                         Center(
                           child: Text(
-                            'Ads Management',
+                            'Graphics Design',
                             style: TextStyle(
                                 fontWeight: FontWeight.w700, fontSize: 20),
                           ),
@@ -279,18 +280,18 @@ class AdsManagement extends StatelessWidget {
                           child: Text(
                             'Course Details',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontWeight: FontWeight.bold, fontSize: 15),
                           ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 30),
+                          padding: const EdgeInsets.only(left: 20, right: 20),
                           child: RichText(
                             text: TextSpan(
                               text:
-                                  'Manage Your Social Strategies. Expand your online audience and establish your social brand in five courses.',
+                                  'how to get started with Google Search Ads and create successful campaigns to reach new customers and grow your business. ',
                               style: TextStyle(
                                   color: Pallete.black,
                                   fontSize: 13,
@@ -641,7 +642,7 @@ class AdsManagement extends StatelessWidget {
                           child: Text(
                             'Help & Support',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
+                                fontWeight: FontWeight.bold, fontSize: 16),
                           ),
                         ),
                         SizedBox(
