@@ -38,6 +38,8 @@ flutter:
     - assets/image 125 (4).png
     - assets/
     - assets/course/
+    - assets/Handling/
+    - assets/ads/
   fonts:
     - family: Cormorant Garamond
       fonts:

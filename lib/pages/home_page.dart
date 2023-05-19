@@ -2,13 +2,29 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/facebookads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/googleads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/instagramads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/linkedinads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/twitterads.dart';
+import 'package:ricoz_app/Screen/Ads%20Management/youtubeads.dart';
+import 'package:ricoz_app/Screen/Handling/Facebook.dart';
+import 'package:ricoz_app/Screen/Handling/GMB.dart';
+import 'package:ricoz_app/Screen/Handling/Instagram.dart';
+import 'package:ricoz_app/Screen/Handling/Linkedin.dart';
+import 'package:ricoz_app/Screen/Handling/Pinterest.dart';
+import 'package:ricoz_app/Screen/Handling/Sharechat.dart';
+import 'package:ricoz_app/Screen/Handling/Snapchat.dart';
+import 'package:ricoz_app/Screen/Handling/Tumblr.dart';
+import 'package:ricoz_app/Screen/Handling/Twitter.dart';
+import 'package:ricoz_app/Screen/Handling/Youtube.dart';
 import 'package:ricoz_app/Screen/courses/Adwords.dart';
 
 import 'package:ricoz_app/Screen/courses/add_management.dart';
 import 'package:ricoz_app/Screen/courses/performance_marketing.dart';
 import 'package:ricoz_app/Screen/courses/social_media_management.dart';
 import 'package:ricoz_app/Screen/courses/web_design.dart';
-import 'package:ricoz_app/Screen/service%20Page/service1_socialmedia.dart';
+
 import 'package:ricoz_app/Screen/service%20Page/service2_ads.dart';
 import 'package:ricoz_app/Screen/service%20Page/service3_graphic.dart';
 import 'package:ricoz_app/Screen/service%20Page/service4_ads.dart';
@@ -623,28 +639,77 @@ class _HomePageState extends State<HomePage> {
                               _buildCircleImage(
                                 'Facebook',
                                 'assets/logo17.png',
-                                (() {}),
+                                (() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const Facebook(),
+                                      ));
+                                }),
                               ),
                               _buildCircleImage(
-                                  'Instagram', 'assets/logo18.png', (() {})),
+                                  'Instagram', 'assets/logo18.png', (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Instagram(),
+                                    ));
+                              })),
                               _buildCircleImage(
-                                  'Linked in', 'assets/logo19.png', (() {})),
-                              _buildCircleImage(
-                                  'Youtube', 'assets/logo20.png', (() {})),
+                                  'Linked in', 'assets/logo19.png', (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Linkedin(),
+                                    ));
+                              })),
+                              _buildCircleImage('Youtube', 'assets/logo20.png',
+                                  (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Youtube(),
+                                    ));
+                              })),
                             ],
                           ),
                           SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
+                              _buildCircleImage('Twitter', 'assets/logo21.png',
+                                  (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Twitter(),
+                                    ));
+                              })),
+                              _buildCircleImage('SnapChat', 'assets/logo22.png',
+                                  (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Snapchat(),
+                                    ));
+                              })),
                               _buildCircleImage(
-                                  'Twitter', 'assets/logo21.png', (() {})),
+                                  'Pinterest', 'assets/logo23.png', (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Pinterest(),
+                                    ));
+                              })),
                               _buildCircleImage(
-                                  'SnapChat', 'assets/logo22.png', (() {})),
-                              _buildCircleImage(
-                                  'Pinterest', 'assets/logo23.png', (() {})),
-                              _buildCircleImage('Google My\n   Business',
-                                  'assets/logo24.png', (() {})),
+                                  'Google My\n Business', 'assets/logo24.png',
+                                  (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const GMB(),
+                                    ));
+                              })),
                             ],
                           ),
                           SizedBox(
@@ -655,11 +720,23 @@ class _HomePageState extends State<HomePage> {
                             child: Row(
                               children: [
                                 _buildCircleImage(
-                                    'ShareChat', 'assets/logo25.png', (() {})),
+                                    'ShareChat', 'assets/logo25.png', (() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const Sharechat(),
+                                      ));
+                                })),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 25),
                                   child: _buildCircleImage(
-                                      'Tumblr', 'assets/logo26.png', (() {})),
+                                      'Tumblr', 'assets/logo26.png', (() {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => const Tumblr(),
+                                        ));
+                                  })),
                                 ),
                               ],
                             ),
@@ -771,14 +848,41 @@ class _HomePageState extends State<HomePage> {
                               _buildCircleImage(
                                 'Youtube\n    Ads',
                                 'assets/logo20.png',
-                                (() {}),
+                                (() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Youtubeads(),
+                                      ));
+                                }),
                               ),
-                              _buildCircleImage('Google\n  Ads',
-                                  'assets/image 181.png', (() {})),
-                              _buildCircleImage('FaceBook\n      Ads',
-                                  'assets/logo17.png', (() {})),
-                              _buildCircleImage('Linked in\n     Ads',
-                                  'assets/logo19.png', (() {})),
+                              _buildCircleImage(
+                                  'Google\n  Ads', 'assets/image 181.png', (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const googleads(),
+                                    ));
+                              })),
+                              _buildCircleImage(
+                                  'FaceBook\n      Ads', 'assets/logo17.png',
+                                  (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const facebookads(),
+                                    ));
+                              })),
+                              _buildCircleImage(
+                                  'Linked in\n     Ads', 'assets/logo19.png',
+                                  (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const linkedinads(),
+                                    ));
+                              })),
                             ],
                           ),
                           SizedBox(height: 20),
@@ -787,11 +891,25 @@ class _HomePageState extends State<HomePage> {
                               Padding(
                                 padding:
                                     const EdgeInsets.only(left: 30, right: 30),
-                                child: _buildCircleImage('Instagram\n      Ads',
-                                    'assets/logo18.png', (() {})),
+                                child: _buildCircleImage(
+                                    'Instagram\n      Ads', 'assets/logo18.png',
+                                    (() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const instagramads(),
+                                      ));
+                                })),
                               ),
-                              _buildCircleImage('Twitter\n  Ads',
-                                  'assets/logo21.png', (() {})),
+                              _buildCircleImage(
+                                  'Twitter\n  Ads', 'assets/logo21.png', (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const twitterads(),
+                                    ));
+                              })),
                             ],
                           ),
                         ],
