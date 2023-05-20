@@ -514,112 +514,122 @@ class AdsManagement extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 30,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Text(
-                            'Help & Support',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
-                          ),
-                        ),
-                        SizedBox(
                           height: 10,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 20),
-                          child: Text(
-                            'In case of any queries, refer to the FAQs or contact us via the ‘help’ section below',
-                            style: TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width: 25,
-                                child: Icon(
-                                  Icons.email_outlined,
-                                  size: 20,
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Email',
+                        Container(
+                          height: 300,
+                          width: double.infinity,
+                          color: Color.fromARGB(248, 246, 251, 251),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20, top: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Help & Support',
                                   style: TextStyle(
-                                      color: Pallete.black, fontSize: 14),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
                                 ),
-                              ),
-                              Container(
-                                height: 30,
-                                width: 1,
-                                color: Pallete.black,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Icon(
-                                Icons.help_outline_outlined,
-                                size: 20,
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Help(),
-                                      ));
-                                },
-                                child: Text(
-                                  'FAQs',
-                                  style: TextStyle(
-                                      color: Pallete.black, fontSize: 14),
+                                SizedBox(
+                                  height: 10,
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 20),
+                                  child: Text(
+                                    'In case of any queries, refer to the FAQs or contact us via the ‘help’ section below',
+                                    style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 25,
+                                      child: Icon(
+                                        Icons.email_outlined,
+                                        size: 20,
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        'Email',
+                                        style: TextStyle(
+                                            color: Pallete.black, fontSize: 14),
+                                      ),
+                                    ),
+                                    Container(
+                                      height: 30,
+                                      width: 1,
+                                      color: Pallete.black,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Icon(
+                                      Icons.help_outline_outlined,
+                                      size: 20,
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => Help(),
+                                            ));
+                                      },
+                                      child: Text(
+                                        'FAQs',
+                                        style: TextStyle(
+                                            color: Pallete.black, fontSize: 14),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 20),
+                                  child: Text(
+                                    '* By accepting you agree to fulfill all the collaboration requirements and terms & conditions mentioned.',
+                                    style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                Center(
+                                  child: SizedBox(
+                                    height: 50,
+                                    width: 300,
+                                    child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                            backgroundColor: Pallete.brown,
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(30))),
+                                        onPressed: () {},
+                                        child: Text(
+                                          'Let`s Begin',
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              fontFamily: 'Roboto Slab',
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 20),
-                          child: Text(
-                            '* By accepting you agree to fulfill all the collaboration requirements and terms & conditions mentioned.',
-                            style: TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Center(
-                          child: SizedBox(
-                            height: 50,
-                            width: 300,
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Pallete.brown,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(30))),
-                                onPressed: () {},
-                                child: Text(
-                                  'Let`s Begin',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontFamily: 'Roboto Slab',
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                        )
                       ],
                     ),
                   ),
