@@ -64,144 +64,16 @@ class WebDesign extends StatelessWidget {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                Row(children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: SizedBox(
-                      height: 30,
-                      width: 20,
-                      child: IconButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => HomePage(),
-                                ));
-                          },
-                          icon: Icon(
-                            Icons.arrow_back_ios,
-                            color: Pallete.whiteColor,
-                            size: 15,
-                          )),
-                    ),
+                Center(
+                  child: Image.asset(
+                    'assets/course/website.png',
+                    width: MediaQuery.of(context).size.width * .94,
                   ),
-                  SizedBox(
-                    height: 30,
-                    child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ));
-                        },
-                        child: Text(
-                          "Course Detail",
-                          style: TextStyle(
-                              color: Pallete.whiteColor,
-                              fontWeight: FontWeight.w400),
-                        )),
-                  )
-                ]),
-                Stack(
-                  children: [
-                    Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Container(
-                          height: 253.5,
-                          width: 358,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/course/website.png'))),
-                        )),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15, top: .3),
-                      child: Container(
-                        height: 253.5,
-                        width: 360,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/course/rectangle1.png'))),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, top: 40),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/course/rectangle2.png',
-                            height: 43,
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Image.asset(
-                            'assets/course/rectangle2.png',
-                            height: 43,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 110, left: 50),
-                      child: Text(
-                        'Best Website\nDevelopment from ricoz',
-                        style: TextStyle(
-                            color: Pallete.whiteColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 23),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, top: 170),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 45,
-                            width: 80,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Color.fromARGB(185, 61, 37, 28)),
-                            child: Center(
-                              child: Text(
-                                'Computer',
-                                style: TextStyle(
-                                    color: Pallete.whiteColor,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Container(
-                            height: 45,
-                            width: 120,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Color.fromARGB(185, 61, 37, 28)),
-                            child: Center(
-                              child: Text(
-                                '#bestwdcourse',
-                                style: TextStyle(
-                                    color: Pallete.whiteColor,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 5),
+                  padding: const EdgeInsets.only(top: 10),
                   child: Container(
-                    height: 950,
+                    height: 970,
                     width: 390,
                     decoration: BoxDecoration(
                         color: Pallete.whiteColor,
@@ -265,11 +137,23 @@ class WebDesign extends StatelessWidget {
                         SizedBox(
                           height: 15,
                         ),
-                        Center(
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20),
                           child: Text(
-                            'Website Development',
+                            'Website Development Course',
                             style: TextStyle(
                                 fontWeight: FontWeight.w700, fontSize: 20),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Text(
+                            '#learn_from_industries_expert',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 10),
                           ),
                         ),
                         SizedBox(
@@ -451,8 +335,7 @@ class WebDesign extends StatelessWidget {
                         SizedBox(
                           height: 15,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 25),
+                        Center(
                           child: Container(
                             height: 50,
                             width: 330,
@@ -513,8 +396,7 @@ class WebDesign extends StatelessWidget {
                         SizedBox(
                           height: 15,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 25),
+                        Center(
                           child: Container(
                             height: 50,
                             width: 330,
@@ -575,8 +457,7 @@ class WebDesign extends StatelessWidget {
                         SizedBox(
                           height: 15,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 25),
+                        Center(
                           child: Container(
                             height: 50,
                             width: 330,
@@ -664,37 +545,31 @@ class WebDesign extends StatelessWidget {
                           child: Row(
                             children: [
                               SizedBox(
-                                width: 10,
+                                width: 25,
                                 child: Icon(
                                   Icons.email_outlined,
-                                  size: 30,
+                                  size: 20,
                                 ),
-                              ),
-                              SizedBox(
-                                width: 20,
                               ),
                               TextButton(
                                 onPressed: () {},
                                 child: Text(
                                   'Email',
                                   style: TextStyle(
-                                      color: Pallete.black, fontSize: 17),
+                                      color: Pallete.black, fontSize: 14),
                                 ),
                               ),
-                              SizedBox(
-                                width: 05,
-                              ),
                               Container(
-                                height: 40,
+                                height: 30,
                                 width: 1,
                                 color: Pallete.black,
                               ),
                               SizedBox(
-                                width: 20,
+                                width: 10,
                               ),
                               Icon(
                                 Icons.help_outline_outlined,
-                                size: 30,
+                                size: 20,
                               ),
                               TextButton(
                                 onPressed: () {
@@ -707,19 +582,19 @@ class WebDesign extends StatelessWidget {
                                 child: Text(
                                   'FAQs',
                                   style: TextStyle(
-                                      color: Pallete.black, fontSize: 17),
+                                      color: Pallete.black, fontSize: 14),
                                 ),
                               ),
                             ],
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 20, right: 20),
                           child: Text(
-                            '*By accepting you agree to fulfill all the collaboration requirements and terms & conditions mentioned.',
+                            '* By accepting you agree to fulfill all the collaboration requirements and terms & conditions mentioned.',
                             style: TextStyle(
                                 fontSize: 13, fontWeight: FontWeight.w300),
                           ),
@@ -727,8 +602,7 @@ class WebDesign extends StatelessWidget {
                         SizedBox(
                           height: 30,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30),
+                        Center(
                           child: SizedBox(
                             height: 50,
                             width: 320,
@@ -740,9 +614,10 @@ class WebDesign extends StatelessWidget {
                                             BorderRadius.circular(30))),
                                 onPressed: () {},
                                 child: Text(
-                                  'Start your course today',
+                                  'Let`s Begin',
                                   style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 20,
+                                      fontFamily: 'Roboto Slab',
                                       fontWeight: FontWeight.bold),
                                 )),
                           ),
