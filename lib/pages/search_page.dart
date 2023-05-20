@@ -3,20 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:ricoz_app/Screen/service%20Page/service1_socialmedia.dart';
-import 'package:ricoz_app/Screen/service%20Page/service2_ads.dart';
-import 'package:ricoz_app/Screen/service%20Page/service3_graphic.dart';
-import 'package:ricoz_app/Screen/service%20Page/service4_ads.dart';
-import 'package:ricoz_app/Screen/service%20Page/service5_adsmanager.dart';
-import 'package:ricoz_app/Screen/service%20Page/service6_webdev.dart';
-import 'package:ricoz_app/Screen/service%20Page/service7_digital.dart';
-import 'package:ricoz_app/Screen/service%20Page/service8_shopify.dart';
 import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
 import 'package:ricoz_app/pages/cart_page.dart';
 import 'package:ricoz_app/pages/home_page.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
+import 'package:ricoz_app/services_final/ads_management.dart';
+import 'package:ricoz_app/services_final/ads_manager.dart';
+import 'package:ricoz_app/services_final/digital_marketing.dart';
+import 'package:ricoz_app/services_final/google_adwords.dart';
+import 'package:ricoz_app/services_final/graphic_design.dart';
+import 'package:ricoz_app/services_final/shopify_development.dart';
+import 'package:ricoz_app/services_final/socialmedia.dart';
+import 'package:ricoz_app/services_final/website_development.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -147,8 +147,7 @@ class _SearchPageState extends State<SearchPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      const ServiceSocialMedia(),
+                                  builder: (context) => const ServiceSMM(),
                                 ),
                               );
                             }),
@@ -168,8 +167,7 @@ class _SearchPageState extends State<SearchPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      const ServiceGraphicDes(),
+                                  builder: (context) => const ServiceGraphic(),
                                 ));
                           })),
                           _buildCircleImage(
@@ -211,7 +209,7 @@ class _SearchPageState extends State<SearchPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const ServiceDig(),
+                                  builder: (context) => const ServiceDigital(),
                                 ));
                           })),
                           _buildCircleImage('    Shopify\nDevelopment',

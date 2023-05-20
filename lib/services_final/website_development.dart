@@ -36,7 +36,7 @@ class _ServiceWebDevState extends State<ServiceWebDev> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(68, 1, 1, 1),
         title: const Image(
-            image: AssetImage('assets/webdevelopment.png'),
+            image: AssetImage('assets/image 1 (4).png'),
             width: 110,
             height: 50),
         centerTitle: true,
@@ -73,31 +73,14 @@ class _ServiceWebDevState extends State<ServiceWebDev> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 21),
-            const Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 21.0),
-                  child:
-                      Icon(Icons.arrow_back_ios, color: Colors.white, size: 15),
-                ),
-                SizedBox(width: 26),
-                Text('Service Detail',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400))
-              ],
-            ),
-            const SizedBox(height: 23),
             const Padding(
               padding: EdgeInsets.only(left: 17.0, right: 17),
               child: Image(
-                  image: AssetImage('assets/Service_SMM.png'),
+                  image: AssetImage('assets/webdevelopment.png'),
                   width: 394,
                   height: 234),
             ),
-            const SizedBox(height: 33),
+            const SizedBox(height: 23),
             Container(
                 height: 1800,
                 width: MediaQuery.of(context).size.width,
@@ -143,7 +126,7 @@ class _ServiceWebDevState extends State<ServiceWebDev> {
                       const SizedBox(height: 21),
                       const Center(
                         child: Text(
-                          'Social Media Management',
+                          'Website Development Services',
                           style: TextStyle(
                               fontSize: 21, fontWeight: FontWeight.w600),
                         ),

@@ -36,7 +36,7 @@ class _ServiceShopifyState extends State<ServiceShopify> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(68, 1, 1, 1),
         title: const Image(
-            image: AssetImage('assets/shopifydevelopment.png'),
+            image: AssetImage('assets/image 1 (4).png'),
             width: 110,
             height: 50),
         centerTitle: true,
@@ -93,7 +93,7 @@ class _ServiceShopifyState extends State<ServiceShopify> {
             const Padding(
               padding: EdgeInsets.only(left: 17.0, right: 17),
               child: Image(
-                  image: AssetImage('assets/Service_SMM.png'),
+                  image: AssetImage('assets/Shopifydevelopment.png'),
                   width: 394,
                   height: 234),
             ),
@@ -143,7 +143,7 @@ class _ServiceShopifyState extends State<ServiceShopify> {
                       const SizedBox(height: 21),
                       const Center(
                         child: Text(
-                          'Social Media Management',
+                          'Shopify Development Services',
                           style: TextStyle(
                               fontSize: 21, fontWeight: FontWeight.w600),
                         ),

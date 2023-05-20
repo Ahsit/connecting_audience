@@ -5,14 +5,14 @@ import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 
-class ServiceSMM extends StatefulWidget {
-  const ServiceSMM({super.key});
+class ServiceGoogleAds extends StatefulWidget {
+  const ServiceGoogleAds({super.key});
 
   @override
-  State<ServiceSMM> createState() => _ServiceSMMState();
+  State<ServiceGoogleAds> createState() => _ServiceGoogleAdsState();
 }
 
-class _ServiceSMMState extends State<ServiceSMM> {
+class _ServiceGoogleAdsState extends State<ServiceGoogleAds> {
   DateTime selectedDate = DateTime.now();
   double _sliderValue = 0.0;
 
@@ -36,7 +36,9 @@ class _ServiceSMMState extends State<ServiceSMM> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(68, 1, 1, 1),
         title: const Image(
-            image: AssetImage('assets/googleads.png'), width: 110, height: 50),
+            image: AssetImage('assets/image 1 (4).png'),
+            width: 110,
+            height: 50),
         centerTitle: true,
         leading: GestureDetector(
           onTap: () {
@@ -91,7 +93,7 @@ class _ServiceSMMState extends State<ServiceSMM> {
             const Padding(
               padding: EdgeInsets.only(left: 17.0, right: 17),
               child: Image(
-                  image: AssetImage('assets/Service_SMM.png'),
+                  image: AssetImage('assets/googleads.png'),
                   width: 394,
                   height: 234),
             ),
@@ -129,7 +131,7 @@ class _ServiceSMMState extends State<ServiceSMM> {
                           const Padding(
                             padding: EdgeInsets.only(top: 22),
                             child: Text(
-                              '  SMM Services   ',
+                              '  Google Adwords  ',
                               style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
@@ -141,7 +143,7 @@ class _ServiceSMMState extends State<ServiceSMM> {
                       const SizedBox(height: 21),
                       const Center(
                         child: Text(
-                          'Social Media Management',
+                          'Google Adwords',
                           style: TextStyle(
                               fontSize: 21, fontWeight: FontWeight.w600),
                         ),

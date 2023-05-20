@@ -36,7 +36,9 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(68, 1, 1, 1),
         title: const Image(
-            image: AssetImage('assets/adsmanager.png'), width: 110, height: 50),
+            image: AssetImage('assets/image 1 (4).png'),
+            width: 110,
+            height: 50),
         centerTitle: true,
         leading: GestureDetector(
           onTap: () {
@@ -71,39 +73,22 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 21),
-            const Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 21.0),
-                  child:
-                      Icon(Icons.arrow_back_ios, color: Colors.white, size: 15),
-                ),
-                SizedBox(width: 26),
-                Text('Service Detail',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400))
-              ],
-            ),
-            const SizedBox(height: 23),
             const Padding(
               padding: EdgeInsets.only(left: 17.0, right: 17),
               child: Image(
-                  image: AssetImage('assets/Service_SMM.png'),
-                  width: 394,
+                  image: AssetImage('assets/adsmanager.png'),
+                  width: 400,
                   height: 234),
             ),
-            const SizedBox(height: 33),
+            const SizedBox(height: 23),
             Container(
                 height: 1800,
                 width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(30),
-                  ),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15)),
                 ),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,7 +126,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                       const SizedBox(height: 21),
                       const Center(
                         child: Text(
-                          'Social Media Management',
+                          'Ads Manager Services',
                           style: TextStyle(
                               fontSize: 21, fontWeight: FontWeight.w600),
                         ),
@@ -150,7 +135,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                         padding: EdgeInsets.only(top: 21.0, left: 28),
                         child: Text('Service Details',
                             style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w600)),
+                                fontSize: 15, fontWeight: FontWeight.w600)),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
@@ -162,7 +147,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                                   'Manage Your Social Strategies. Expand your online audience and establish your social brand in five courses ',
                               style: TextStyle(
                                   color: Pallete.black,
-                                  fontSize: 17,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w300),
                               children: [
                                 TextSpan(
@@ -188,7 +173,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                         child: Text(
                           'Eligibility Criteria',
                           style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w600),
+                              fontSize: 15, fontWeight: FontWeight.w600),
                         ),
                       ),
                       const Padding(
@@ -251,12 +236,12 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                               const SizedBox(width: 30),
                               const Text(
                                 'Starting Date:',
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 17),
                               ),
                               Text(
                                 '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
                                 style: const TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                                    fontSize: 17, fontWeight: FontWeight.bold),
                               ),
                               const SizedBox(width: 25),
                               GestureDetector(
@@ -287,7 +272,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                         padding: EdgeInsets.only(left: 33.0, top: 30),
                         child: Text('Payment Details',
                             style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w600)),
+                                fontSize: 15, fontWeight: FontWeight.w600)),
                       ),
                       const SizedBox(height: 25),
                       Padding(
@@ -318,7 +303,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                                 const Text(
                                   'Special Pack',
                                   style: TextStyle(
-                                      fontSize: 19,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w500),
                                 ),
                                 const SizedBox(
@@ -379,7 +364,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                                 const Text(
                                   'Special Pack Pro',
                                   style: TextStyle(
-                                      fontSize: 19,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w500),
                                 ),
                                 SizedBox(
@@ -440,7 +425,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                                 Text(
                                   'Corporate Pack',
                                   style: TextStyle(
-                                      fontSize: 19,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w500),
                                 ),
                                 SizedBox(
@@ -474,7 +459,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                         padding: EdgeInsets.only(left: 34.0, top: 53),
                         child: Text('Strategy for one month by ricoz ',
                             style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w700)),
+                                fontSize: 15, fontWeight: FontWeight.w700)),
                       ),
                       const Padding(
                         padding: EdgeInsets.only(top: 22.0, left: 16),
@@ -483,7 +468,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                             Icon(Icons.circle_rounded, size: 8),
                             Text('    Posting of infographics',
                                 style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w400))
+                                    fontSize: 14, fontWeight: FontWeight.w400))
                           ],
                         ),
                       ),
@@ -496,7 +481,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                               child: Text(
                                   '    Posting of stories and be highlight- every day',
                                   style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w400)),
                             )
                           ],
@@ -510,7 +495,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                             Text(
                                 '    Focus on engagement and organic sharing- everyday',
                                 style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w400))
+                                    fontSize: 14, fontWeight: FontWeight.w400))
                           ],
                         ),
                       ),
@@ -523,7 +508,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                               child: Text(
                                   '    Reels and videos- according to the strategy sheet (including editing and ideas)',
                                   style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w400)),
                             )
                           ],
@@ -538,7 +523,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                               child: Text(
                                   '    Discussion of post ideas and engagement ways- everyday',
                                   style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w400)),
                             )
                           ],
@@ -553,7 +538,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                               child: Text(
                                   '    Advertisements( posters and writeups, ads run)- end of every week or as and when required',
                                   style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w400)),
                             )
                           ],
@@ -567,7 +552,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                             Text(
                                 '    Reels video for the brand (content, editing, posting)',
                                 style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w400))
+                                    fontSize: 14, fontWeight: FontWeight.w400))
                           ],
                         ),
                       ),
@@ -580,7 +565,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                               child: Text(
                                   '    Working on different strategies decided for the month- regular basis',
                                   style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w400)),
                             )
                           ],
@@ -590,7 +575,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                         padding: EdgeInsets.only(left: 33.0, top: 40),
                         child: Text(' Help & Support',
                             style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w600)),
+                                fontSize: 15, fontWeight: FontWeight.w600)),
                       ),
                       const Padding(
                         padding:
@@ -599,7 +584,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                           child: Text(
                               'In case of any queries, refer to the FAQs or contact us via the ‘help’ section below',
                               style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.w300)),
+                                  fontSize: 14, fontWeight: FontWeight.w300)),
                         ),
                       ),
                       const Padding(
@@ -659,7 +644,7 @@ class _ServiceAdsManagerState extends State<ServiceAdsManager> {
                               child: const Text(
                                 'Proceed to Payment',
                                 style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
+                                    fontSize: 17, fontWeight: FontWeight.bold),
                               )),
                         ),
                       )

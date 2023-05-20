@@ -36,7 +36,7 @@ class _ServiceGraphicState extends State<ServiceGraphic> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(68, 1, 1, 1),
         title: const Image(
-            image: AssetImage('assets/graphicdesign.png'),
+            image: AssetImage('assets/image 1 (4).png'),
             width: 110,
             height: 50),
         centerTitle: true,
@@ -93,7 +93,7 @@ class _ServiceGraphicState extends State<ServiceGraphic> {
             const Padding(
               padding: EdgeInsets.only(left: 17.0, right: 17),
               child: Image(
-                  image: AssetImage('assets/Service_SMM.png'),
+                  image: AssetImage('assets/graphicdesign.png'),
                   width: 394,
                   height: 234),
             ),
@@ -143,7 +143,7 @@ class _ServiceGraphicState extends State<ServiceGraphic> {
                       const SizedBox(height: 21),
                       const Center(
                         child: Text(
-                          'Social Media Management',
+                          ' Graphic Design Services',
                           style: TextStyle(
                               fontSize: 21, fontWeight: FontWeight.w600),
                         ),
