@@ -92,7 +92,7 @@ class _PinterestState extends State<Pinterest> {
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Container(
-                      height: 1650,
+                      height: 1660,
                       width: MediaQuery.of(context).size.width,
                       decoration: const BoxDecoration(
                           color: Colors.white,
