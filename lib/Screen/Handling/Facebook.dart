@@ -6,7 +6,6 @@ import 'package:ricoz_app/pages/menu_page.dart';
 
 import '../../Services/colors.dart';
 import '../../pages/Notification_page.dart';
-import '../../pages/home_page.dart';
 
 class Facebook extends StatefulWidget {
   const Facebook({super.key});
@@ -92,7 +91,7 @@ class _FacebookState extends State<Facebook> {
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Container(
-                      height: 1630,
+                      height: 1650,
                       width: MediaQuery.of(context).size.width,
                       decoration: const BoxDecoration(
                           color: Colors.white,

@@ -92,7 +92,7 @@ class _SharechatState extends State<Sharechat> {
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Container(
-                      height: 1630,
+                      height: 1650,
                       width: MediaQuery.of(context).size.width,
                       decoration: const BoxDecoration(
                           color: Colors.white,

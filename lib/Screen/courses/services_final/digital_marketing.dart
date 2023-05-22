@@ -1,23 +1,22 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:ricoz_app/Services/colors.dart';
+import 'package:ricoz_app/pages/Notification_page.dart';
 import 'package:ricoz_app/pages/help/help_page.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 
-import '../../Services/colors.dart';
-import '../../pages/Notification_page.dart';
-import '../../pages/home_page.dart';
-
-class Linkedin extends StatefulWidget {
-  const Linkedin({super.key});
+class ServiceDigital extends StatefulWidget {
+  const ServiceDigital({super.key});
 
   @override
-  State<Linkedin> createState() => _LinkedinState();
+  State<ServiceDigital> createState() => _ServiceDigitalState();
 }
 
-class _LinkedinState extends State<Linkedin> {
+class _ServiceDigitalState extends State<ServiceDigital> {
   DateTime selectedDate = DateTime.now();
   double _sliderValue = 0.0;
+
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
@@ -34,7 +33,7 @@ class _LinkedinState extends State<Linkedin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromRGBO(68, 1, 1, 1),
+        backgroundColor: Color.fromRGBO(68, 1, 1, 1),
         body: NestedScrollView(
             floatHeaderSlivers: true,
             headerSliverBuilder: (BuildContext context, innerBoxIsScrolled) {
@@ -85,7 +84,7 @@ class _LinkedinState extends State<Linkedin> {
                 children: [
                   Center(
                     child: Image.asset(
-                      'assets/Handling/linkedin.png',
+                      'assets/service/digital.png',
                       width: MediaQuery.of(context).size.width * .94,
                     ),
                   ),
@@ -124,7 +123,7 @@ class _LinkedinState extends State<Linkedin> {
                               const Padding(
                                 padding: EdgeInsets.only(top: 22),
                                 child: Text(
-                                  '  L`in Services   ',
+                                  '  DM Services   ',
                                   style: TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400,
@@ -137,7 +136,7 @@ class _LinkedinState extends State<Linkedin> {
                           Padding(
                             padding: const EdgeInsets.only(left: 20),
                             child: Text(
-                              'Linked in Service',
+                              'Digital Marketing',
                               style: TextStyle(
                                   fontSize: 21, fontWeight: FontWeight.w600),
                             ),
@@ -166,7 +165,7 @@ class _LinkedinState extends State<Linkedin> {
                               child: RichText(
                                 text: const TextSpan(
                                   text:
-                                      'We’ll work with you to craft a strategy and decide exactly how to approach your LinkedIn campaign. This can include',
+                                      'Manage Your Social Strategies. Expand your online audience and establish your social brand in five courses.',
                                   style: TextStyle(
                                       color: Pallete.black,
                                       fontSize: 13,
@@ -768,7 +767,7 @@ class Service_Roles extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 45,
-        width: 350,
+        width: 365,
         decoration: BoxDecoration(
             border: Border.all(color: Colors.grey),
             borderRadius: const BorderRadius.all(Radius.circular(6))),
@@ -789,7 +788,7 @@ class Service_Roles extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10.0),
                 child: Text(txt,
                     style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w400)),
+                        fontSize: 15, fontWeight: FontWeight.w400)),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 20.0),

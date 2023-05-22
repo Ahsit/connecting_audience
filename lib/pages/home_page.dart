@@ -31,14 +31,14 @@ import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
 import 'package:ricoz_app/pages/search_page.dart';
 
-import 'package:ricoz_app/services_final/ads_management.dart';
-import 'package:ricoz_app/services_final/ads_manager.dart';
-import 'package:ricoz_app/services_final/digital_marketing.dart';
-import 'package:ricoz_app/services_final/google_adwords.dart';
-import 'package:ricoz_app/services_final/graphic_design.dart';
-import 'package:ricoz_app/services_final/shopify_development.dart';
-import 'package:ricoz_app/services_final/socialmedia.dart';
-import 'package:ricoz_app/services_final/website_development.dart';
+import 'package:ricoz_app/Screen/courses/services_final/ads_management.dart';
+import 'package:ricoz_app/Screen/courses/services_final/ads_manager.dart';
+import 'package:ricoz_app/Screen/courses/services_final/digital_marketing.dart';
+import 'package:ricoz_app/Screen/courses/services_final/google_adwords.dart';
+import 'package:ricoz_app/Screen/courses/services_final/graphic_design.dart';
+import 'package:ricoz_app/Screen/courses/services_final/shopify_development.dart';
+import 'package:ricoz_app/Screen/courses/services_final/socialmedia.dart';
+import 'package:ricoz_app/Screen/courses/services_final/website_development.dart';
 
 import '../Screen/courses/Digital_marketing.dart';
 import '../Screen/courses/graphics_design.dart';
