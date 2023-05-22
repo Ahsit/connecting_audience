@@ -72,7 +72,7 @@ class Performance extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Container(
-                      height: 960,
+                      height: 970,
                       width: 390,
                       decoration: BoxDecoration(
                         color: Pallete.whiteColor,
