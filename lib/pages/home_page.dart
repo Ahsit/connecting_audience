@@ -21,6 +21,13 @@ import 'package:ricoz_app/Screen/Handling/Youtube.dart';
 import 'package:ricoz_app/Screen/courses/Adwords.dart';
 import 'package:ricoz_app/Screen/courses/add_management.dart';
 import 'package:ricoz_app/Screen/courses/performance_marketing.dart';
+import 'package:ricoz_app/Screen/courses/services_final/ads_management.dart';
+import 'package:ricoz_app/Screen/courses/services_final/ads_manager.dart';
+import 'package:ricoz_app/Screen/courses/services_final/digital_marketing.dart';
+import 'package:ricoz_app/Screen/courses/services_final/google_adwords.dart';
+import 'package:ricoz_app/Screen/courses/services_final/graphic_design.dart';
+import 'package:ricoz_app/Screen/courses/services_final/shopify_development.dart';
+import 'package:ricoz_app/Screen/courses/services_final/website_development.dart';
 import 'package:ricoz_app/Screen/courses/social_media_management.dart';
 import 'package:ricoz_app/Screen/courses/web_design.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
@@ -29,16 +36,10 @@ import 'package:ricoz_app/pages/expandedSection/About_us.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
 import 'package:ricoz_app/pages/search_page.dart';
-import 'package:ricoz_app/services_final/ads_management.dart';
-import 'package:ricoz_app/services_final/ads_manager.dart';
-import 'package:ricoz_app/services_final/digital_marketing.dart';
-import 'package:ricoz_app/services_final/google_adwords.dart';
-import 'package:ricoz_app/services_final/graphic_design.dart';
-import 'package:ricoz_app/services_final/shopify_development.dart';
-import 'package:ricoz_app/services_final/socialmedia.dart';
-import 'package:ricoz_app/services_final/website_development.dart';
+
 import '../Screen/courses/Digital_marketing.dart';
 import '../Screen/courses/graphics_design.dart';
+import '../Screen/courses/services_final/socialmedia.dart';
 import '../Screen/courses/video_edit.dart';
 
 class HomePage extends StatefulWidget {
@@ -75,24 +76,7 @@ class _HomePageState extends State<HomePage> {
     'assets/slide15.png',
     'assets/slide16.png',
   ];
-  List<String> imageText = [
-    'Social Media Management',
-    'Google Ads',
-    'Graphic Design',
-    'Ads Management'
-  ];
-  List<String> imageText2 = [
-    'Social Media Management',
-    'Google Ads',
-    'Graphic Design',
-  ];
-  List<String> imageText3 = ['Facebook', 'Instagram', 'Linked in', 'Twitter'];
-  List<String> imageText4 = [
-    'Google Ads',
-    'Youtube Ads',
-    'facebbok Ads',
-    'Twitter Ads'
-  ];
+
   bool _isExpanded = false;
 
   final List<String> _options = [
@@ -160,13 +144,6 @@ class _HomePageState extends State<HomePage> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.all(15.0),
-                    child: Image(image: AssetImage('assets/test.png')),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
                   Stack(
                     children: [
                       Padding(
@@ -199,19 +176,6 @@ class _HomePageState extends State<HomePage> {
                                           BlendMode.dstATop),
                                     ),
                                   ),
-                                  child: Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Center(
-                                      child: Text(
-                                        imageText[entry.key],
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 27,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
                                 );
                               },
                             );
@@ -240,14 +204,13 @@ class _HomePageState extends State<HomePage> {
                       );
                     }).toList(),
                   ),
-                  SizedBox(height: 26),
                   Center(
                     child: Container(
-                      height: 280,
+                      height: 270,
                       width: width * 0.92,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(9)),
-                          color: Color.fromRGBO(255, 217, 218, 1)),
+                          color: Color.fromRGBO(68, 1, 1, 1)),
                       child: Column(
                         children: [
                           Padding(
@@ -257,7 +220,7 @@ class _HomePageState extends State<HomePage> {
                                 Text(' Services',
                                     style: TextStyle(
                                         fontSize: 23,
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold)),
                               ],
                             ),
@@ -352,7 +315,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 33),
                   Stack(
                     children: [
                       Padding(
@@ -383,19 +345,6 @@ class _HomePageState extends State<HomePage> {
                                       colorFilter: ColorFilter.mode(
                                           Colors.black.withOpacity(0.6),
                                           BlendMode.dstATop),
-                                    ),
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Center(
-                                      child: Text(
-                                        imageText[entry.key],
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 27,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
                                     ),
                                   ),
                                 );
@@ -565,19 +514,6 @@ class _HomePageState extends State<HomePage> {
                                       colorFilter: ColorFilter.mode(
                                           Colors.black.withOpacity(0.6),
                                           BlendMode.dstATop),
-                                    ),
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Center(
-                                      child: Text(
-                                        imageText3[entry.key],
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 27,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
                                     ),
                                   ),
                                 );
@@ -774,19 +710,6 @@ class _HomePageState extends State<HomePage> {
                                       colorFilter: ColorFilter.mode(
                                           Colors.black.withOpacity(0.6),
                                           BlendMode.dstATop),
-                                    ),
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Center(
-                                      child: Text(
-                                        imageText4[entry.key],
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 27,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
                                     ),
                                   ),
                                 );
@@ -1268,14 +1191,15 @@ Widget buildSquareButton(
   return GestureDetector(
     onTap: onPressed,
     child: Container(
-      width: 80,
-      height: 90,
+      width: 70,
+      height: 80,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.5), // shadow color
+            color: Color.fromARGB(255, 255, 255, 255)
+                .withOpacity(0.3), // shadow color
             offset: Offset(0, 3), // offset in the x and y direction
             blurRadius: 3, // spread radius
             spreadRadius: 1, // blur radius
@@ -1287,15 +1211,15 @@ Widget buildSquareButton(
         children: [
           Image.asset(
             imagePath,
-            width: 30,
-            height: 30,
+            width: 25,
+            height: 25,
           ),
           SizedBox(height: 10),
           Text(
             buttonText,
             style: TextStyle(
-              color: Color.fromRGBO(126, 125, 125, 1),
-              fontSize: 11,
+              color: Color.fromRGBO(99, 98, 98, 1),
+              fontSize: 10,
               fontWeight: FontWeight.w400,
             ),
           ),

@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
 import 'dart:async';
 
@@ -19,7 +19,7 @@ class _SplashScreen extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 1),
+        const Duration(seconds: 2),
         () => Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const IstScreen())));
   }
@@ -28,38 +28,54 @@ class _SplashScreen extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
         width: double.infinity,
-        color: Pallete.brown,
+        decoration: BoxDecoration(
+          color: Pallete.brown,
+        ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  'rico',
-                  style: TextStyle(
-                      fontSize: 80,
-                      color: Pallete.ricoz,
-                      fontFamily: "Cormorant Garamond"),
+          children: <Widget>[
+            Expanded(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        text: 'rico',
+                        style: TextStyle(
+                            fontSize: 80,
+                            color: Pallete.ricoz,
+                            fontFamily: "Cormorant Garamond"),
+                        children: const <TextSpan>[
+                          TextSpan(
+                              text: 'Z',
+                              style: TextStyle(
+                                  fontSize: 90,
+                                  color: Pallete.ricoz,
+                                  fontFamily: "Cormorant Garamond")),
+                        ],
+                      ),
+                    ),
+                    const Text(
+                      "CONNECTING AUDIENCE",
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Pallete.ricoz,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
                 ),
-                Text('Z',
-                    style: TextStyle(
-                        fontSize: 90,
-                        color: Pallete.ricoz,
-                        fontFamily: "Cormorant Garamond"))
-              ],
+              ),
             ),
-            const Text(
-              "CONNECTING AUDIENCE",
-              style: TextStyle(fontSize: 15, color: Pallete.ricoz),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 450, bottom: 50),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 100),
               child: Text(
                 "© 2023. Ricoz Pvt.Ltd.",
-                style: TextStyle(fontSize: 15, color: Pallete.ricoz),
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Pallete.ricoz,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.w500),
               ),
             )
           ],
