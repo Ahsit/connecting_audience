@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "130911537111",
+    "project_id": "firstricoz-b59a2",
+    "storage_bucket": "firstricoz-b59a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130911537111:android:9a37a3f1d2363f3947ed92",
+        "android_client_info": {
+          "package_name": "com.example.ricoz_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130911537111-m412qhd7k15noc3fa8s4m0dqokfa22n2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6XVIYICvRyWrpBfTrfeFm8Rl7Ef9ZVW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130911537111-m412qhd7k15noc3fa8s4m0dqokfa22n2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
