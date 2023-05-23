@@ -19,7 +19,6 @@ import 'package:ricoz_app/Screen/Handling/Tumblr.dart';
 import 'package:ricoz_app/Screen/Handling/Twitter.dart';
 import 'package:ricoz_app/Screen/Handling/Youtube.dart';
 import 'package:ricoz_app/Screen/courses/Adwords.dart';
-
 import 'package:ricoz_app/Screen/courses/add_management.dart';
 import 'package:ricoz_app/Screen/courses/performance_marketing.dart';
 import 'package:ricoz_app/Screen/courses/social_media_management.dart';
@@ -30,16 +29,14 @@ import 'package:ricoz_app/pages/expandedSection/About_us.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
 import 'package:ricoz_app/pages/search_page.dart';
-
-import 'package:ricoz_app/Screen/courses/services_final/ads_management.dart';
-import 'package:ricoz_app/Screen/courses/services_final/ads_manager.dart';
-import 'package:ricoz_app/Screen/courses/services_final/digital_marketing.dart';
-import 'package:ricoz_app/Screen/courses/services_final/google_adwords.dart';
-import 'package:ricoz_app/Screen/courses/services_final/graphic_design.dart';
-import 'package:ricoz_app/Screen/courses/services_final/shopify_development.dart';
-import 'package:ricoz_app/Screen/courses/services_final/socialmedia.dart';
-import 'package:ricoz_app/Screen/courses/services_final/website_development.dart';
-
+import 'package:ricoz_app/services_final/ads_management.dart';
+import 'package:ricoz_app/services_final/ads_manager.dart';
+import 'package:ricoz_app/services_final/digital_marketing.dart';
+import 'package:ricoz_app/services_final/google_adwords.dart';
+import 'package:ricoz_app/services_final/graphic_design.dart';
+import 'package:ricoz_app/services_final/shopify_development.dart';
+import 'package:ricoz_app/services_final/socialmedia.dart';
+import 'package:ricoz_app/services_final/website_development.dart';
 import '../Screen/courses/Digital_marketing.dart';
 import '../Screen/courses/graphics_design.dart';
 import '../Screen/courses/video_edit.dart';
@@ -269,7 +266,7 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              _buildCircleImage('Social Media\nManagement',
+                              buildSquareButton('Social Media\nManagement',
                                   'assets/image 158.png', (() {
                                 Navigator.push(
                                     context,
@@ -277,7 +274,7 @@ class _HomePageState extends State<HomePage> {
                                       builder: (context) => const ServiceSMM(),
                                     ));
                               })),
-                              _buildCircleImage(
+                              buildSquareButton(
                                   ' Google\nAdwords', 'assets/image 181.png',
                                   (() {
                                 Navigator.push(
@@ -287,7 +284,7 @@ class _HomePageState extends State<HomePage> {
                                           const ServiceGoogleAds(),
                                     ));
                               })),
-                              _buildCircleImage(
+                              buildSquareButton(
                                   'Graphics\n  Design', 'assets/image 160.png',
                                   (() {
                                 Navigator.push(
@@ -297,7 +294,7 @@ class _HomePageState extends State<HomePage> {
                                           const ServiceGraphic(),
                                     ));
                               })),
-                              _buildCircleImage('        Ads\nManagement',
+                              buildSquareButton('        Ads\nManagement',
                                   'assets/image 161.png', (() {
                                 Navigator.push(
                                     context,
@@ -312,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              _buildCircleImage(
+                              buildSquareButton(
                                   '   Ads\nManager', 'assets/image 165.png',
                                   (() {
                                 Navigator.push(
@@ -322,7 +319,7 @@ class _HomePageState extends State<HomePage> {
                                           const ServiceAdsManager(),
                                     ));
                               })),
-                              _buildCircleImage('    Website\nDevelopment',
+                              buildSquareButton('    Website\nDevelopment',
                                   'assets/image 166.png', (() {
                                 Navigator.push(
                                     context,
@@ -331,7 +328,7 @@ class _HomePageState extends State<HomePage> {
                                           const ServiceWebDev(),
                                     ));
                               })),
-                              _buildCircleImage('   Digital\nMarketing',
+                              buildSquareButton('   Digital\nMarketing',
                                   'assets/image 168.png', (() {
                                 Navigator.push(
                                     context,
@@ -340,7 +337,7 @@ class _HomePageState extends State<HomePage> {
                                           const ServiceDigital(),
                                     ));
                               })),
-                              _buildCircleImage('    Shopify\nDevelopment',
+                              buildSquareButton('    Shopify\nDevelopment',
                                   'assets/image 170.png', (() {
                                 Navigator.push(
                                     context,
@@ -1264,6 +1261,48 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Widget buildSquareButton(
+    String buttonText, String imagePath, VoidCallback onPressed) {
+  return GestureDetector(
+    onTap: onPressed,
+    child: Container(
+      width: 80,
+      height: 90,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.5), // shadow color
+            offset: Offset(0, 3), // offset in the x and y direction
+            blurRadius: 3, // spread radius
+            spreadRadius: 1, // blur radius
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            imagePath,
+            width: 30,
+            height: 30,
+          ),
+          SizedBox(height: 10),
+          Text(
+            buttonText,
+            style: TextStyle(
+              color: Color.fromRGBO(126, 125, 125, 1),
+              fontSize: 11,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
 }
 
 Widget _buildCircleImage(String label, String img, VoidCallback press) {
