@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/Services/colors.dart';
+import 'package:ricoz_app/Services/firebase_auth_method.dart';
+import 'package:ricoz_app/pages/home_page.dart';
 import 'package:ricoz_app/pages/login_page.dart';
 
 class CreateAccountPage extends StatefulWidget {
@@ -13,8 +16,23 @@ class CreateAccountPage extends StatefulWidget {
 
 class _CreateAccountPageState extends State<CreateAccountPage> {
   bool isChecked = false;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+  void signUpUser() async {
+    FirebaseAuthMethods(FirebaseAuth.instance).signUpWithEmail(
+        email: emailController.text,
+        password: passwordController.text,
+        context: context);
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -67,7 +85,6 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               child: SizedBox(
                 width: 350,
                 child: TextField(
-                  obscureText: true,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
@@ -90,8 +107,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
             Center(
               child: SizedBox(
                 width: 350,
-                child: TextField(
-                  obscureText: true,
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: emailController,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
@@ -115,7 +133,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               child: SizedBox(
                 width: 350,
                 child: TextField(
-                  obscureText: true,
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
@@ -139,8 +157,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
             Center(
               child: SizedBox(
                 width: 350,
-                child: TextField(
+                child: TextFormField(
                   obscureText: true,
+                  controller: passwordController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     focusedBorder: OutlineInputBorder(
@@ -191,55 +210,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                         backgroundColor: Pallete.brown,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                                title: Column(
-                                  children: [
-                                    Image.asset(
-                                      "assets/images/confirm.jpg",
-                                      height: 70,
-                                    ),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    Text(
-                                      "Done",
-                                      style: TextStyle(
-                                          fontSize: 40, color: Pallete.brown),
-                                    ),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    Text(
-                                      "You have sucessfully created your Account",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          color: Pallete.fontcolor2,
-                                          fontWeight: FontWeight.w400),
-                                    ),
-                                    SizedBox(
-                                      height: 40,
-                                    ),
-                                    SizedBox(
-                                      width: 130,
-                                      child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                              backgroundColor: Pallete.brown),
-                                          onPressed: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(builder:
-                                                    (BuildContext context) {
-                                              return LoginPage();
-                                            }));
-                                          },
-                                          child: Text("Done")),
-                                    )
-                                  ],
-                                ),
-                              ));
-                    },
+                    onPressed: signUpUser,
                     child: Text(
                       'SIGN UP',
                       style:
@@ -247,39 +218,88 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     )),
               ),
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 20),
-                  child: Container(
-                    height: 23,
-                    width: 23,
-                    decoration: BoxDecoration(
-                        border: Border.all(),
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Checkbox(
-                        checkColor: Pallete.brown,
-                        activeColor: Pallete.brown,
-                        value: isChecked,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            isChecked = value!;
-                          });
-                        }),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 10),
-                  child: Text(
-                    "By selecting checkbox you agree to our\nTerm Condition & Privacy Policy.",
-                    style: TextStyle(color: Pallete.fontcolor2),
-                  ),
-                )
-              ],
-            )
+            // Row(
+            //   children: [
+            //     Padding(
+            //       padding: const EdgeInsets.only(top: 20, left: 20),
+            //       child: Container(
+            //         height: 23,
+            //         width: 23,
+            //         decoration: BoxDecoration(
+            //             border: Border.all(),
+            //             borderRadius: BorderRadius.circular(5)),
+            //         child: Checkbox(
+            //             checkColor: Pallete.brown,
+            //             activeColor: Pallete.brown,
+            //             value: isChecked,
+            //             onChanged: (bool? value) {
+            //               setState(() {
+            //                 isChecked = value!;
+            //               });
+            //             }),
+            //       ),
+            //     ),
+            //     Padding(
+            //       padding: const EdgeInsets.only(top: 20, left: 10),
+            //       child: Text(
+            //         "By selecting checkbox you agree to our\nTerm Condition & Privacy Policy.",
+            //         style: TextStyle(color: Pallete.fontcolor2),
+            //       ),
+            //     )
+            //   ],
+            // )
           ],
         ),
       ),
     );
   }
 }
+//  Navigator.push(context,
+//                                                 MaterialPageRoute(builder:
+//                                                     (BuildContext context) {
+//                                               return LoginPage();
+//                                             }));
+
+
+// showDialog( 
+                      //   context: context,
+                      //   builder: (context) => AlertDialog(
+                      //     title: Column(
+                      //       children: [
+                      //         Image.asset(
+                      //           "assets/images/confirm.jpg",
+                      //           height: 70,
+                      //         ),
+                      //         SizedBox(
+                      //           height: 20,
+                      //         ),
+                      //         Text(
+                      //           "Done",
+                      //           style: TextStyle(
+                      //               fontSize: 40, color: Pallete.brown),
+                      //         ),
+                      //         SizedBox(
+                      //           height: 20,
+                      //         ),
+                      //         Text(
+                      //           "You have sucessfully created your Account",
+                      //           style: TextStyle(
+                      //               fontSize: 15,
+                      //               color: Pallete.fontcolor2,
+                      //               fontWeight: FontWeight.w400),
+                      //         ),
+                      //         SizedBox(
+                      //           height: 40,
+                      //         ),
+                      //         SizedBox(
+                      //           width: 130,
+                      //           child: ElevatedButton(
+                      //               style: ElevatedButton.styleFrom(
+                      //                   backgroundColor: Pallete.brown),
+                      //               onPressed:
+                      //               child: Text("Done")),
+                      //         )
+                      //       ],
+                      //     ),
+                      //   ),
+                      // );

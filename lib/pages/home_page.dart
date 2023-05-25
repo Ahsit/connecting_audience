@@ -838,11 +838,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 30,
                   ),
                   SizedBox(
-                      height: 40,
-                      width: 400,
+                      height: 50,
+                      width: double.infinity,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromARGB(255, 84, 47, 21),
@@ -1068,12 +1068,15 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
             Positioned(
               bottom: 0,
               left: 0,
               right: 0,
               child: Container(
-                height: 50,
+                height: 60,
                 color: Colors.white,
                 child: Row(
                   children: [
@@ -1081,7 +1084,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(left: 30),
                       child: SizedBox(
                         height: 35,
-                        width: 101,
+                        width: 105,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               shadowColor: Colors.transparent,

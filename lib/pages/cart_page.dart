@@ -62,7 +62,7 @@ class _CartState extends State<Cart> {
             left: 0,
             right: 0,
             child: Container(
-              height: 50,
+              height: 60,
               color: Colors.white,
               child: Row(
                 children: [
@@ -133,7 +133,7 @@ class _CartState extends State<Cart> {
                     padding: const EdgeInsets.only(left: 40),
                     child: SizedBox(
                       height: 35,
-                      width: 105,
+                      width: 109,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             shadowColor: Colors.transparent,

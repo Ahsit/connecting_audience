@@ -392,7 +392,7 @@ class _OffersState extends State<Offers> {
             left: 0,
             right: 0,
             child: Container(
-              height: 50,
+              height: 60,
               color: Colors.white,
               child: Row(
                 children: [

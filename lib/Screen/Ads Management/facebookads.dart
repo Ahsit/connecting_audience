@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:ricoz_app/Services/contact.dart';
 import 'package:ricoz_app/pages/help/help_page.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 
@@ -669,7 +670,14 @@ class _facebookadsState extends State<facebookads> {
                                         ),
                                       ),
                                       TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ContactForm(),
+                                              ));
+                                        },
                                         child: Text(
                                           'Email',
                                           style: TextStyle(

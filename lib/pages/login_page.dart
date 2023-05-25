@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/Screen/start%20screens/Ist_screen.dart';
+import 'package:ricoz_app/Services/firebase_auth_method.dart';
 import 'package:ricoz_app/pages/home_page.dart';
 import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/Services/fingerprint.dart';
@@ -17,6 +19,23 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool authenticated = false;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+  void loginUser() {
+    FirebaseAuthMethods(FirebaseAuth.instance).loginWithEmail(
+        email: emailController.text,
+        password: passwordController.text,
+        context: context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +86,8 @@ class _LoginPageState extends State<LoginPage> {
               child: SizedBox(
                 height: 60,
                 width: 350,
-                child: TextField(
+                child: TextFormField(
+                  controller: emailController,
                   decoration: InputDecoration(
                       border:
                           OutlineInputBorder(borderSide: BorderSide(width: 1)),
@@ -92,7 +112,8 @@ class _LoginPageState extends State<LoginPage> {
               child: SizedBox(
                 height: 60,
                 width: 350,
-                child: TextField(
+                child: TextFormField(
+                  controller: passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
                       border:
@@ -140,16 +161,17 @@ class _LoginPageState extends State<LoginPage> {
                         backgroundColor: Pallete.brown,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
-                    onPressed: () async {
-                      final authenticate = await LocalAuth.authenticate();
-                      setState(() {
-                        authenticated = authenticate;
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (BuildContext context) {
-                          return HomePage();
-                        }));
-                      });
-                    },
+                    onPressed: loginUser,
+                    // () async {
+                    //   final authenticate = await LocalAuth.authenticate();
+                    //   setState(() {
+                    //     authenticated = authenticate;
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (BuildContext context) {
+                    //   return HomePage();
+                    // }));
+                    //   });
+                    // },
                     child: Text(
                       'LOGIN',
                       style:

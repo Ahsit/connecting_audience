@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
 import 'package:ricoz_app/pages/cart_page.dart';
@@ -233,7 +231,7 @@ class _SearchPageState extends State<SearchPage> {
             left: 0,
             right: 0,
             child: Container(
-              height: 50,
+              height: 60,
               color: Colors.white,
               child: Row(
                 children: [
@@ -262,7 +260,7 @@ class _SearchPageState extends State<SearchPage> {
                     padding: const EdgeInsets.only(left: 50),
                     child: SizedBox(
                       height: 35,
-                      width: 108,
+                      width: 110,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             shadowColor: Colors.transparent,
