@@ -2,6 +2,8 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ricoz_app/pages/home_page.dart';
+import 'package:ricoz_app/pages/login_page.dart';
 
 class FirebaseAuthMethods {
   final FirebaseAuth _auth;
@@ -21,6 +23,8 @@ class FirebaseAuthMethods {
       if (e.email == null) {
         showSnackBar(context, 'Please Enter correct Email and Password');
       }
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => LoginPage()));
       showSnackBar(context, e.message!);
     }
   }
@@ -44,6 +48,8 @@ class FirebaseAuthMethods {
       if (!_auth.currentUser!.emailVerified) {
         await sendEmailVerification(context);
       }
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
     } on FirebaseAuthException catch (e) {
       showSnackBar(context, e.message!);
     }

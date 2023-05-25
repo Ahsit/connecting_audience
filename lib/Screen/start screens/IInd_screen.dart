@@ -104,10 +104,14 @@ class _IIndScreenState extends State<IIndScreen> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return LoginPage();
-                    }));
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return LoginPage();
+                        },
+                      ),
+                    );
                   },
                   child: Text(
                     'Next',

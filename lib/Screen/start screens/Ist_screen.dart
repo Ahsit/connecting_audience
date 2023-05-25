@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/Screen/start%20screens/IInd_screen.dart';
 
@@ -20,7 +22,7 @@ class _IstScreenState extends State<IstScreen> {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.push(context,
+                Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (BuildContext context) {
                   return const LoginPage();
                 }));
