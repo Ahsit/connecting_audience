@@ -1,5 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_element, dead_code, use_build_context_synchronously, avoid_print
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ricoz_app/Services/colors.dart';
@@ -14,7 +16,79 @@ class RecoverPassword1 extends StatefulWidget {
 }
 
 class _RecoverPassword1State extends State<RecoverPassword1> {
+  final emailController = TextEditingController();
+
   @override
+  void dispose() {
+    emailController.dispose();
+    super.dispose();
+  }
+
+  Future resetPassword() async {
+    try {
+      await FirebaseAuth.instance
+          .sendPasswordResetEmail(email: emailController.text.trim());
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Column(
+            children: [
+              Image.asset(
+                "assets/images/confirm.jpg",
+                height: 70,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Done",
+                style: TextStyle(fontSize: 40, color: Pallete.brown),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "We have sucessfully sent\nyou the reset password link.\n   Kindly check your email.",
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Pallete.fontcolor2,
+                    fontWeight: FontWeight.w400),
+              ),
+              Text(
+                "Having Trouble?",
+                style: TextStyle(fontSize: 15),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              SizedBox(
+                width: 130,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Pallete.brown),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                        return LoginPage();
+                      }));
+                    },
+                    child: Text("Done")),
+              )
+            ],
+          ),
+        ),
+      );
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+                content: Text(e.message.toString()),
+                title: Text('Please Valid E-Mail'),
+              ));
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -64,7 +138,8 @@ class _RecoverPassword1State extends State<RecoverPassword1> {
               child: SizedBox(
                 height: 55,
                 width: 350,
-                child: TextField(
+                child: TextFormField(
+                  controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       border:
@@ -95,59 +170,7 @@ class _RecoverPassword1State extends State<RecoverPassword1> {
                       backgroundColor: Pallete.brown,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        title: Column(
-                          children: [
-                            Image.asset(
-                              "assets/images/confirm.jpg",
-                              height: 70,
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              "Done",
-                              style:
-                                  TextStyle(fontSize: 40, color: Pallete.brown),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              "We have sucessfully sent\nyou the reset password link.\n   Kindly check your email.",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  color: Pallete.fontcolor2,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            Text(
-                              "Having Trouble?",
-                              style: TextStyle(fontSize: 15),
-                            ),
-                            SizedBox(
-                              height: 40,
-                            ),
-                            SizedBox(
-                              width: 130,
-                              child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      backgroundColor: Pallete.brown),
-                                  onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                        builder: (BuildContext context) {
-                                      return LoginPage();
-                                    }));
-                                  },
-                                  child: Text("Done")),
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                  },
+                  onPressed: resetPassword,
                   child: Text(
                     'Send Reset Link',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
@@ -159,5 +182,6 @@ class _RecoverPassword1State extends State<RecoverPassword1> {
         ),
       ),
     );
+    //RESET PASSWORD
   }
 }
