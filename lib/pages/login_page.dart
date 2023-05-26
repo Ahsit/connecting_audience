@@ -258,7 +258,10 @@ class _LoginPageState extends State<LoginPage> {
                         backgroundColor: Pallete.whiteColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
-                    onPressed: () {},
+                    onPressed: () {
+                      FirebaseAuthMethods(FirebaseAuth.instance)
+                          .signInWithGoogle(context);
+                    },
                     child: Row(
                       children: [
                         Padding(
