@@ -6,7 +6,6 @@ import 'package:ricoz_app/pages/menu_page.dart';
 
 import '../../Services/colors.dart';
 import '../../pages/Notification_page.dart';
-import '../../pages/home_page.dart';
 
 class linkedinads extends StatefulWidget {
   const linkedinads({super.key});

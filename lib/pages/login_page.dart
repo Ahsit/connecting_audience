@@ -4,9 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/Screen/start%20screens/Ist_screen.dart';
 import 'package:ricoz_app/Services/firebase_auth_method.dart';
-import 'package:ricoz_app/pages/home_page.dart';
+
 import 'package:ricoz_app/Services/colors.dart';
-import 'package:ricoz_app/Services/fingerprint.dart';
+
 import 'package:ricoz_app/pages/password/create_account.dart';
 import 'package:ricoz_app/pages/password/forgot_password.dart';
 
