@@ -53,10 +53,10 @@ class _HomePageState extends State<HomePage> {
   int carouselIndex = 0;
   int carouselIndexx = 0;
   List<String> imageUrls = [
-    'assets/slide1.png',
-    'assets/slide2.png',
-    'assets/slide3.png',
-    'assets/slide4.png',
+    'assets/slide1.jpg',
+    'assets/slide2.jpg',
+    'assets/slide3.jpg',
+    'assets/slide4.jpg',
   ];
   List<String> imageUrls2 = [
     'assets/slide5.png',
@@ -150,8 +150,8 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(right: 15.0, left: 15),
                         child: CarouselSlider(
                           options: CarouselOptions(
-                            aspectRatio: 16 / 9,
-                            autoPlay: true,
+                            aspectRatio: 16 / 7.5,
+                            // autoPlay: true,
                             enlargeCenterPage: true,
                             viewportFraction: 1,
                             onPageChanged: (index, reason) {
@@ -169,12 +169,10 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(10)),
                                     image: DecorationImage(
-                                      image: AssetImage(entry.value),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.6),
-                                          BlendMode.dstATop),
-                                    ),
+                                        image: AssetImage(
+                                          entry.value,
+                                        ),
+                                        fit: BoxFit.fill),
                                   ),
                                 );
                               },
@@ -321,8 +319,8 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(right: 15.0, left: 15),
                         child: CarouselSlider(
                           options: CarouselOptions(
-                            aspectRatio: 16 / 9,
-                            autoPlay: true,
+                            aspectRatio: 16 / 7.5,
+                            //autoPlay: true,
                             enlargeCenterPage: true,
                             viewportFraction: 1,
                             onPageChanged: (index, reason) {
@@ -341,10 +339,7 @@ class _HomePageState extends State<HomePage> {
                                         Radius.circular(10)),
                                     image: DecorationImage(
                                       image: AssetImage(entry.value),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.6),
-                                          BlendMode.dstATop),
+                                      fit: BoxFit.fill,
                                     ),
                                   ),
                                 );
