@@ -36,6 +36,8 @@ import 'package:ricoz_app/pages/expandedSection/About_us.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
 import 'package:ricoz_app/pages/search_page.dart';
+import 'package:ricoz_app/pages/videoplayer.dart';
+import 'package:video_player/video_player.dart';
 
 import '../Screen/courses/Digital_marketing.dart';
 import '../Screen/courses/graphics_design.dart';
@@ -315,65 +317,19 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0, left: 15),
-                        child: CarouselSlider(
-                          options: CarouselOptions(
-                            aspectRatio: 16 / 9,
-                            autoPlay: true,
-                            enlargeCenterPage: true,
-                            viewportFraction: 1,
-                            onPageChanged: (index, reason) {
-                              setState(() {
-                                carouselIndex = index;
-                              });
-                            },
-                          ),
-                          items: imageUrls.asMap().entries.map((entry) {
-                            return Builder(
-                              builder: (BuildContext context) {
-                                return Container(
-                                  height: 191,
-                                  decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(10)),
-                                    image: DecorationImage(
-                                      image: AssetImage(entry.value),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.6),
-                                          BlendMode.dstATop),
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          }).toList(),
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: imageUrls.asMap().entries.map((entry) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                        child: CircleAvatar(
-                          radius: 4,
-                          backgroundColor: Colors.white,
-                          foregroundColor: entry.key == carouselIndex
-                              ? Colors.black
-                              : Colors.grey,
-                          child: Text(
-                            entry.key == carouselIndex ? '\u2022' : '\u25E6',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                      );
-                    }).toList(),
+                  Container(
+                    height: 200.0,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: <Widget>[
+                          VideoCard(
+                              videoTitle: 'Video 1', videoUrl: 'video 1.mp4'),
+                          VideoCard(
+                              videoTitle: 'Video 2', videoUrl: 'video 1.mp4'),
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(height: 26),
                   Center(
@@ -1271,3 +1227,23 @@ Widget _buildCircleImage(String label, String img, VoidCallback press) {
     ],
   );
 }
+/*SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: imageUrls.asMap().entries.map((entry) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: Colors.white,
+                          foregroundColor: entry.key == carouselIndex
+                              ? Colors.black
+                              : Colors.grey,
+                          child: Text(
+                            entry.key == carouselIndex ? '\u2022' : '\u25E6',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),*/
