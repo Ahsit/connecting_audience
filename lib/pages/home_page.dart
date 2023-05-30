@@ -36,7 +36,6 @@ import 'package:ricoz_app/pages/expandedSection/About_us.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
 import 'package:ricoz_app/pages/search_page.dart';
-import 'package:ricoz_app/pages/videoplayer.dart';
 import 'package:video_player/video_player.dart';
 
 import '../Screen/courses/Digital_marketing.dart';
@@ -55,10 +54,10 @@ class _HomePageState extends State<HomePage> {
   int carouselIndex = 0;
   int carouselIndexx = 0;
   List<String> imageUrls = [
-    'assets/slide1.png',
-    'assets/slide2.png',
-    'assets/slide3.png',
-    'assets/slide4.png',
+    'assets/slide1.jpg',
+    'assets/slide2.jpg',
+    'assets/slide3.jpg',
+    'assets/slide4.jpg',
   ];
   List<String> imageUrls2 = [
     'assets/slide5.png',
@@ -152,8 +151,8 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(right: 15.0, left: 15),
                         child: CarouselSlider(
                           options: CarouselOptions(
-                            aspectRatio: 16 / 9,
-                            autoPlay: true,
+                            aspectRatio: 16 / 7.5,
+                            // autoPlay: true,
                             enlargeCenterPage: true,
                             viewportFraction: 1,
                             onPageChanged: (index, reason) {
@@ -171,12 +170,10 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(10)),
                                     image: DecorationImage(
-                                      image: AssetImage(entry.value),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.6),
-                                          BlendMode.dstATop),
-                                    ),
+                                        image: AssetImage(
+                                          entry.value,
+                                        ),
+                                        fit: BoxFit.fill),
                                   ),
                                 );
                               },
@@ -318,20 +315,32 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    height: 200.0,
+                    // height: 150.0,
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: <Widget>[
                           VideoCard(
-                              videoTitle: 'Video 1', videoUrl: 'video 1.mp4'),
+                            videoTitle: 'Video 1',
+                            videoUrl:
+                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
+                            onTap: () {
+                              print('Video 1 tapped!');
+                            },
+                          ),
                           VideoCard(
-                              videoTitle: 'Video 2', videoUrl: 'video 1.mp4'),
+                            videoTitle: 'Video 2',
+                            videoUrl:
+                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
+                            onTap: () {
+                              print('Video 2 tapped!');
+                            },
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 26),
+                  SizedBox(height: 10),
                   Center(
                     child: Container(
                       height: 280,
@@ -1226,6 +1235,62 @@ Widget _buildCircleImage(String label, String img, VoidCallback press) {
       ),
     ],
   );
+}
+
+class VideoCard extends StatefulWidget {
+  final String videoTitle;
+  final String videoUrl;
+  final Function()? onTap;
+
+  VideoCard({required this.videoTitle, required this.videoUrl, this.onTap});
+
+  @override
+  _VideoCardState createState() => _VideoCardState();
+}
+
+class _VideoCardState extends State<VideoCard> {
+  late VideoPlayerController _controller;
+  late Future<void> _initializeVideoPlayerFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.network(widget.videoUrl);
+    _initializeVideoPlayerFuture = _controller.initialize().then((_) {
+      setState(() {}); // Trigger a rebuild once the video is initialized
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _toggleVideoPlayback() {
+    if (_controller.value.isPlaying) {
+      _controller.pause();
+    } else {
+      _controller.play();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        _toggleVideoPlayback();
+      },
+      child: Container(
+        width: 200.0,
+        margin: EdgeInsets.all(8.0),
+        child: AspectRatio(
+          aspectRatio: _controller.value.aspectRatio,
+          child: VideoPlayer(_controller),
+        ),
+      ),
+    );
+  }
 }
 /*SizedBox(height: 10),
                   Row(

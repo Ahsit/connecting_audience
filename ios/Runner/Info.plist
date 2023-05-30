@@ -30,7 +30,11 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.130911537111-nie1oi0go5hnqgjgsros29agb6nkrtgh</string>
+<<<<<<< HEAD
 				
+=======
+				<string>fb931080098126372</string>
+>>>>>>> 73be0cd6d4b0d75f7a24c3ba028fdd23ae8ff5e2
 			</array>
 		</dict>
 	</array>
