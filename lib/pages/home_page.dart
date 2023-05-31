@@ -30,13 +30,13 @@ import 'package:ricoz_app/Screen/courses/services_final/shopify_development.dart
 import 'package:ricoz_app/Screen/courses/services_final/website_development.dart';
 import 'package:ricoz_app/Screen/courses/social_media_management.dart';
 import 'package:ricoz_app/Screen/courses/web_design.dart';
+import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
 import 'package:ricoz_app/pages/cart_page.dart';
 import 'package:ricoz_app/pages/expandedSection/About_us.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
 import 'package:ricoz_app/pages/search_page.dart';
-import 'package:video_player/video_player.dart';
 
 import '../Screen/courses/Digital_marketing.dart';
 import '../Screen/courses/graphics_design.dart';
@@ -51,20 +51,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  VideoPlayerController _controller;
+
   int carouselIndex = 0;
   int carouselIndexx = 0;
   List<String> imageUrls = [
     'assets/slide1.jpg',
     'assets/slide2.jpg',
     'assets/slide3.jpg',
-    'assets/slide4.jpg',
-  ];
-  List<String> imageUrls2 = [
+    'assets/slide4.png',
     'assets/slide5.png',
     'assets/slide6.png',
     'assets/slide7.png',
     'assets/slide8.png',
   ];
+
   List<String> imageUrls3 = [
     'assets/slide9.jpeg',
     'assets/slide10.jpeg',
@@ -76,6 +77,16 @@ class _HomePageState extends State<HomePage> {
     'assets/slide14.jpeg',
     'assets/slide15.png',
     'assets/slide16.png',
+  ];
+  List<String> imageUrls5 = [
+    'assets/courseslider/adsmanagement.png',
+    'assets/courseslider/marketingmanagement.png',
+    'assets/courseslider/socialmediacourse.png',
+    'assets/courseslider/seo.png',
+    'assets/courseslider/videoediting.png',
+    'assets/courseslider/emailmarketing.png',
+    'assets/courseslider/webdesign.png',
+    'assets/courseslider/graphic.png',
   ];
 
   bool _isExpanded = false;
@@ -91,6 +102,11 @@ class _HomePageState extends State<HomePage> {
   ];
   bool isVisible = false;
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -314,33 +330,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  Container(
-                    // height: 150.0,
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: <Widget>[
-                          VideoCard(
-                            videoTitle: 'Video 1',
-                            videoUrl:
-                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
-                            onTap: () {
-                              print('Video 1 tapped!');
-                            },
-                          ),
-                          VideoCard(
-                            videoTitle: 'Video 2',
-                            videoUrl:
-                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
-                            onTap: () {
-                              print('Video 2 tapped!');
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 26),
                   Center(
                     child: Container(
                       height: 280,
@@ -803,35 +793,196 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
-                  SizedBox(
-                      height: 50,
-                      width: double.infinity,
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 84, 47, 21),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              isVisible = !isVisible;
-                            });
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 80),
-                                child: Text(
-                                  'Know more about social media at ricoz',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 12),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Container(
+                                height: 500,
+                                width: 300,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Pallete.whiteColor),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 10, top: 10),
+                                          child: Image.asset(
+                                            'assets/review/1.png',
+                                            height: 80,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Text(
+                                          'Alex Dsouza',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 20, right: 20, top: 20),
+                                      child: Text(
+                                        'I`ve been using Ricoz for managing my social media accounts for the past six months, and I must say, I`m extremely impressed. The platform offers a wide range of features that have significantly improved my social media presence. The scheduling tool is fantastic; it allows me to plan and publish my content in advance, ensuring a consistent posting schedule. The analytics dashboard provides detailed insights into my audience`s behavior, helping me tailor my content accordingly. Moreover, their customer support is top-notch, always prompt and helpful. I highly recommend Ricoz to anyone looking for a reliable social media service provider.',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
-                              Icon(Icons.arrow_drop_down)
-                            ],
-                          ))),
+                            ),
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Container(
+                                height: 500,
+                                width: 300,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Pallete.whiteColor),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 10, top: 10),
+                                          child: Image.asset(
+                                            'assets/review/3.png',
+                                            height: 80,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Text(
+                                          'Daniel Pitorious',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 20, right: 20, top: 20),
+                                      child: Text(
+                                        'Ricoz has been my go-to social media service provider for over a year now, and it has proven to be a valuable tool for my business. The platform offers a comprehensive set of features that cover all aspects of social media management. From content creation and scheduling to detailed analytics and competitor analysis,ricoz has it all. I appreciate the prompt customer support and regular updates with new features. However, I did experience occasional glitches and slow loading times, which can be frustrating when working on tight deadlines. Nevertheless, I highly recommend SocialNinja for anyone seeking a robust social media management solution.',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Container(
+                                height: 500,
+                                width: 300,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Pallete.whiteColor),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 10, top: 10),
+                                          child: Image.asset(
+                                            'assets/review/2.jpeg',
+                                            height: 80,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Text(
+                                          'Biden Trump',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 20, right: 20, top: 20),
+                                      child: Text(
+                                        'I cannot say enough good things about Ricoz. This social media service provider has completely transformed the way I manage my social media accounts. The platform offers a seamless and intuitive experience, allowing me to effortlessly schedule and publish my content across multiple platforms. The detailed insights into my audience`s behavior and engagement rates have helped me refine my social media strategy and achieve tangible results. The customer support team is responsive and always goes the extra mile to assist me. With Ricoz, I`ve seen a significant boost in my social media presence and engagement. I highly recommend it to anyone serious about maximizing their social media impact.',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 20,
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    height: 50,
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 84, 47, 21),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isVisible = !isVisible;
+                        });
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 80),
+                            child: Text(
+                              'Know more about social media at ricoz',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w300, fontSize: 12),
+                            ),
+                          ),
+                          Icon(Icons.arrow_drop_down)
+                        ],
+                      ),
+                    ),
+                  ),
                   Container(
                     height: 50,
                     color: Color.fromARGB(255, 84, 47, 21),
