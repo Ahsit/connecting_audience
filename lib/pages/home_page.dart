@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/Screen/Ads%20Management/facebookads.dart';
@@ -37,6 +36,7 @@ import 'package:ricoz_app/pages/expandedSection/About_us.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
 import 'package:ricoz_app/pages/search_page.dart';
+import 'package:video_player/video_player.dart';
 
 import '../Screen/courses/Digital_marketing.dart';
 import '../Screen/courses/graphics_design.dart';
@@ -51,7 +51,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  VideoPlayerController _controller;
+  //late VideoPlayerController _controller;
 
   int carouselIndex = 0;
   int carouselIndexx = 0;
@@ -438,68 +438,33 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 33),
-                  Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0, left: 15),
-                        child: CarouselSlider(
-                          options: CarouselOptions(
-                            aspectRatio: 16 / 9,
-                            autoPlay: true,
-                            enlargeCenterPage: true,
-                            viewportFraction: 1,
-                            onPageChanged: (index, reason) {
-                              setState(() {
-                                carouselIndex = index;
-                              });
+                  Container(
+                    height: 150.0,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: <Widget>[
+                          VideoCard(
+                            videoTitle: 'Video 1',
+                            videoUrl:
+                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
+                            onTap: () {
+                              print('Video 1 tapped!');
                             },
                           ),
-                          items: imageUrls3.asMap().entries.map((entry) {
-                            return Builder(
-                              builder: (BuildContext context) {
-                                return Container(
-                                  height: 191,
-                                  decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(10)),
-                                    image: DecorationImage(
-                                      image: AssetImage(entry.value),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.6),
-                                          BlendMode.dstATop),
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          }).toList(),
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: imageUrls3.asMap().entries.map((entry) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                        child: CircleAvatar(
-                          radius: 4,
-                          backgroundColor: Colors.white,
-                          foregroundColor: entry.key == carouselIndex
-                              ? Colors.black
-                              : Colors.grey,
-                          child: Text(
-                            entry.key == carouselIndex ? '\u2022' : '\u25E6',
-                            style: TextStyle(fontSize: 16),
+                          VideoCard(
+                            videoTitle: 'Video 2',
+                            videoUrl:
+                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
+                            onTap: () {
+                              print('Video 2 tapped!');
+                            },
                           ),
-                        ),
-                      );
-                    }).toList(),
+                        ],
+                      ),
+                    ),
                   ),
-                  SizedBox(height: 26),
+                  SizedBox(height: 15),
                   Center(
                     child: Container(
                       height: 350,
