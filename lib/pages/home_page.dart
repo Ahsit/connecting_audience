@@ -488,32 +488,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 150.0,
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: <Widget>[
-                          VideoCard(
-                            videoTitle: 'Video 1',
-                            videoAsset:
-                                'https://www.instagram.com/reel/Cs2Xm8LpmQi/?igshid=MzRlODBiNWFlZA%3D%3D.mp4',
-                            onTap: () {
-                              print('Video 1 tapped!');
-                            },
-                          ),
-                          VideoCard(
-                            videoTitle: 'Video 2',
-                            videoAsset:
-                                'https://www.instagram.com/reel/Cs2Xm8LpmQi/?igshid=MzRlODBiNWFlZA%3D%3D.mp4',
-                            onTap: () {
-                              print('Video 2 tapped!');
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
                   SizedBox(height: 15),
                   Center(
                     child: Container(
@@ -1458,61 +1432,7 @@ Widget _buildCircleImage(String label, String img, VoidCallback press) {
   );
 }
 
-class VideoCard extends StatefulWidget {
-  final String videoTitle;
-  final String videoAsset;
-  final Function()? onTap;
 
-  VideoCard({required this.videoTitle, required this.videoAsset, this.onTap});
-
-  @override
-  _VideoCardState createState() => _VideoCardState();
-}
-
-class _VideoCardState extends State<VideoCard> {
-  late VideoPlayerController _controller;
-  late Future<void> _initializeVideoPlayerFuture;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = VideoPlayerController.network(widget.videoAsset);
-    _initializeVideoPlayerFuture = _controller.initialize().then((_) {
-      setState(() {}); // Trigger a rebuild once the video is initialized
-    });
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  void _toggleVideoPlayback() {
-    if (_controller.value.isPlaying) {
-      _controller.pause();
-    } else {
-      _controller.play();
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        _toggleVideoPlayback();
-      },
-      child: Container(
-        width: 200.0,
-        margin: EdgeInsets.all(8.0),
-        child: AspectRatio(
-          aspectRatio: _controller.value.aspectRatio,
-          child: VideoPlayer(_controller),
-        ),
-      ),
-    );
-  }
-}
 /*SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
