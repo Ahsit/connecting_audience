@@ -51,8 +51,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //late VideoPlayerController _controller;
-
   int carouselIndex = 0;
   int carouselIndexx = 0;
   List<String> imageUrls = [
@@ -446,16 +444,16 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           VideoCard(
                             videoTitle: 'Video 1',
-                            videoUrl:
-                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
+                            videoAsset:
+                                'https://www.instagram.com/reel/Cs2Xm8LpmQi/?igshid=MzRlODBiNWFlZA%3D%3D.mp4',
                             onTap: () {
                               print('Video 1 tapped!');
                             },
                           ),
                           VideoCard(
                             videoTitle: 'Video 2',
-                            videoUrl:
-                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
+                            videoAsset:
+                                'https://www.instagram.com/reel/Cs2Xm8LpmQi/?igshid=MzRlODBiNWFlZA%3D%3D.mp4',
                             onTap: () {
                               print('Video 2 tapped!');
                             },
@@ -1355,10 +1353,10 @@ Widget _buildCircleImage(String label, String img, VoidCallback press) {
 
 class VideoCard extends StatefulWidget {
   final String videoTitle;
-  final String videoUrl;
+  final String videoAsset;
   final Function()? onTap;
 
-  VideoCard({required this.videoTitle, required this.videoUrl, this.onTap});
+  VideoCard({required this.videoTitle, required this.videoAsset, this.onTap});
 
   @override
   _VideoCardState createState() => _VideoCardState();
@@ -1371,7 +1369,7 @@ class _VideoCardState extends State<VideoCard> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(widget.videoUrl);
+    _controller = VideoPlayerController.network(widget.videoAsset);
     _initializeVideoPlayerFuture = _controller.initialize().then((_) {
       setState(() {}); // Trigger a rebuild once the video is initialized
     });

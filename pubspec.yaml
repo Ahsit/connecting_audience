@@ -44,6 +44,7 @@ flutter:
     - assets/ads/
     - assets/service/
     - assets/review/
+    - assets/videos/
 
   fonts:
     - family: Cormorant Garamond
