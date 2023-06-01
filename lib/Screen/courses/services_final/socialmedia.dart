@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, curly_braces_in_flow_control_structures, prefer_const_constructors
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
@@ -16,6 +17,13 @@ class ServiceSMM extends StatefulWidget {
 class _ServiceSMMState extends State<ServiceSMM> {
   DateTime selectedDate = DateTime.now();
   double _sliderValue = 0.0;
+  int _currentIndex = 0;
+  final List<String> photos = [
+    'assets/service/Service_SMM.png',
+    'assets/service/Service_SMM.png',
+    'assets/service/Service_SMM.png',
+    'assets/service/Service_SMM.png',
+  ];
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -82,11 +90,35 @@ class _ServiceSMMState extends State<ServiceSMM> {
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  Center(
-                    child: Image.asset(
-                      'assets/service/Service_SMM.png',
-                      width: MediaQuery.of(context).size.width * .94,
+                  CarouselSlider(
+                    options: CarouselOptions(
+                      height: 200,
+                      initialPage: _currentIndex,
+                      enableInfiniteScroll: false,
+                      viewportFraction: 0.8,
+                      aspectRatio: 16 / 9,
+                      onPageChanged: (index, _) {
+                        setState(() {
+                          _currentIndex = index;
+                        });
+                      },
                     ),
+                    items: photos.map((photoPath) {
+                      return Builder(
+                        builder: (BuildContext context) {
+                          return Container(
+                            margin: EdgeInsets.symmetric(horizontal: 5),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                photoPath,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    }).toList(),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
