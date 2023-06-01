@@ -56,14 +56,9 @@ class _HomePageState extends State<HomePage> {
   int carouselIndex = 0;
   int carouselIndexx = 0;
   List<String> imageUrls = [
-    'assets/slide1.jpg',
-    'assets/slide2.jpg',
-    'assets/slide3.jpg',
-    'assets/slide4.png',
-    'assets/slide5.png',
+    'assets/slide4.jpg',
     'assets/slide6.png',
     'assets/slide7.png',
-    'assets/slide8.png',
   ];
 
   List<String> imageUrls3 = [
@@ -103,7 +98,6 @@ class _HomePageState extends State<HomePage> {
   bool isVisible = false;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -329,6 +323,64 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
+                  ),
+                  Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 15.0, left: 15),
+                        child: CarouselSlider(
+                          options: CarouselOptions(
+                            aspectRatio: 16 / 7.5,
+                            // autoPlay: true,
+                            enlargeCenterPage: true,
+                            viewportFraction: 1,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                carouselIndex = index;
+                              });
+                            },
+                          ),
+                          items: imageUrls5.asMap().entries.map((entry) {
+                            return Builder(
+                              builder: (BuildContext context) {
+                                return Container(
+                                  height: 191,
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(10)),
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                          entry.value,
+                                        ),
+                                        fit: BoxFit.fill),
+                                  ),
+                                );
+                              },
+                            );
+                          }).toList(),
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: imageUrls5.asMap().entries.map((entry) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: Colors.white,
+                          foregroundColor: entry.key == carouselIndex
+                              ? Colors.black
+                              : Colors.grey,
+                          child: Text(
+                            entry.key == carouselIndex ? '\u2022' : '\u25E6',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                      );
+                    }).toList(),
                   ),
                   SizedBox(height: 26),
                   Center(
@@ -760,163 +812,6 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 20,
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Stack(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: Container(
-                                height: 500,
-                                width: 300,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Pallete.whiteColor),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 10, top: 10),
-                                          child: Image.asset(
-                                            'assets/review/1.png',
-                                            height: 80,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 20,
-                                        ),
-                                        Text(
-                                          'Alex Dsouza',
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 20, right: 20, top: 20),
-                                      child: Text(
-                                        'I`ve been using Ricoz for managing my social media accounts for the past six months, and I must say, I`m extremely impressed. The platform offers a wide range of features that have significantly improved my social media presence. The scheduling tool is fantastic; it allows me to plan and publish my content in advance, ensuring a consistent posting schedule. The analytics dashboard provides detailed insights into my audience`s behavior, helping me tailor my content accordingly. Moreover, their customer support is top-notch, always prompt and helpful. I highly recommend Ricoz to anyone looking for a reliable social media service provider.',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w400),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: Container(
-                                height: 500,
-                                width: 300,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Pallete.whiteColor),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 10, top: 10),
-                                          child: Image.asset(
-                                            'assets/review/3.png',
-                                            height: 80,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 20,
-                                        ),
-                                        Text(
-                                          'Daniel Pitorious',
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 20, right: 20, top: 20),
-                                      child: Text(
-                                        'Ricoz has been my go-to social media service provider for over a year now, and it has proven to be a valuable tool for my business. The platform offers a comprehensive set of features that cover all aspects of social media management. From content creation and scheduling to detailed analytics and competitor analysis,ricoz has it all. I appreciate the prompt customer support and regular updates with new features. However, I did experience occasional glitches and slow loading times, which can be frustrating when working on tight deadlines. Nevertheless, I highly recommend SocialNinja for anyone seeking a robust social media management solution.',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w400),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: Container(
-                                height: 500,
-                                width: 300,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Pallete.whiteColor),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 10, top: 10),
-                                          child: Image.asset(
-                                            'assets/review/2.jpeg',
-                                            height: 80,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 20,
-                                        ),
-                                        Text(
-                                          'Biden Trump',
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 20, right: 20, top: 20),
-                                      child: Text(
-                                        'I cannot say enough good things about Ricoz. This social media service provider has completely transformed the way I manage my social media accounts. The platform offers a seamless and intuitive experience, allowing me to effortlessly schedule and publish my content across multiple platforms. The detailed insights into my audience`s behavior and engagement rates have helped me refine my social media strategy and achieve tangible results. The customer support team is responsive and always goes the extra mile to assist me. With Ricoz, I`ve seen a significant boost in my social media presence and engagement. I highly recommend it to anyone serious about maximizing their social media impact.',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w400),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        )
-                      ],
-                    ),
-                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -958,6 +853,171 @@ class _HomePageState extends State<HomePage> {
                       color: Color.fromARGB(255, 84, 47, 21),
                       child: Column(
                         children: [
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 20),
+                                      child: Container(
+                                        height: 350,
+                                        width: 300,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Pallete.whiteColor),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10, top: 10),
+                                                  child: Image.asset(
+                                                    'assets/review/1.png',
+                                                    height: 80,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Alex Dsouza',
+                                                  style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 20, right: 30, top: 20),
+                                              child: Text(
+                                                'I`ve been using Ricoz for managing my social media accounts for the past six months, and I must say, I`m extremely impressed. The platform offers a wide range of features that have significantly improved my social media presence. The scheduling tool is fantastic; it allows me to plan and publish my content in advance, ensuring a consistent posting schedule. The analytics dashboard provides detailed insights into my audience`s behavior, helping me tailor my content accordingly. Moreover, their customer support is top-notch, always prompt and helpful. I highly recommend Ricoz to anyone looking for a reliable social media service provider.',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Stack(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 20),
+                                      child: Container(
+                                        height: 350,
+                                        width: 300,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Pallete.whiteColor),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10, top: 10),
+                                                  child: Image.asset(
+                                                    'assets/review/3.png',
+                                                    height: 80,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Daniel Pitorious',
+                                                  style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 20, right: 30, top: 20),
+                                              child: Text(
+                                                'Ricoz has been my go-to social media service provider for over a year now, and it has proven to be a valuable tool for my business. The platform offers a comprehensive set of features that cover all aspects of social media management. From content creation and scheduling to detailed analytics and competitor analysis,ricoz has it all. I appreciate the prompt customer support and regular updates with new features. However, I did experience occasional glitches and slow loading times, which can be frustrating when working on tight deadlines. Nevertheless, I highly recommend SocialNinja for anyone seeking a robust social media management solution.',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Stack(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 20),
+                                      child: Container(
+                                        height: 350,
+                                        width: 300,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Pallete.whiteColor),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10, top: 10),
+                                                  child: Image.asset(
+                                                    'assets/review/2.jpeg',
+                                                    height: 80,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Biden Trump',
+                                                  style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 20, right: 30, top: 20),
+                                              child: Text(
+                                                'I cannot say enough good things about Ricoz. This social media service provider has completely transformed the way I manage my social media accounts. The platform offers a seamless and intuitive experience, allowing me to effortlessly schedule and publish my content across multiple platforms. The detailed insights into my audience`s behavior and engagement rates have helped me refine my social media strategy and achieve tangible results. The customer support team is responsive and always goes the extra mile to assist me. With Ricoz, I`ve seen a significant boost in my social media presence and engagement.',
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(left: 34.0),
                             child: Row(
@@ -967,7 +1027,6 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      SizedBox(height: 30),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 8),
                                         child: Text(
