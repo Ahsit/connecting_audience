@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Pallete.whiteColor,
         appBarTheme: const AppBarTheme(backgroundColor: Pallete.whiteColor),
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

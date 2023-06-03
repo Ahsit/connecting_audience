@@ -322,6 +322,32 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+                  /*Container(
+                    // height: 150.0,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: <Widget>[
+                          VideoCard(
+                            videoTitle: 'Video 1',
+                            videoUrl:
+                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
+                            onTap: () {
+                              print('Video 1 tapped!');
+                            },
+                          ),
+                          VideoCard(
+                            videoTitle: 'Video 2',
+                            videoUrl:
+                                'https://ia600701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4',
+                            onTap: () {
+                              print('Video 2 tapped!');
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),*/
                   Stack(
                     children: [
                       Padding(
@@ -801,6 +827,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {
                         setState(() {
                           isVisible = !isVisible;
+                          _isExpanded = true;
                         });
                       },
                       child: Row(
@@ -808,10 +835,14 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(right: 80),
-                            child: Text(
-                              'Know more about social media at ricoz',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w300, fontSize: 12),
+                            child: AnimatedOpacity(
+                              opacity: _isExpanded ? 0.0 : 1.0,
+                              duration: Duration(milliseconds: 500),
+                              child: Text(
+                                'Know more about social media at ricoz',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w300, fontSize: 12),
+                              ),
                             ),
                           ),
                           Icon(Icons.arrow_drop_down)
@@ -820,7 +851,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    height: 50,
+                    height: 40,
                     color: Color.fromARGB(255, 84, 47, 21),
                   ),
                   Visibility(
@@ -1432,24 +1463,58 @@ Widget _buildCircleImage(String label, String img, VoidCallback press) {
   );
 }
 
+/*class VideoCard extends StatefulWidget {
+  final String videoTitle;
+  final String videoUrl;
+  final Function()? onTap;
 
-/*SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: imageUrls.asMap().entries.map((entry) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                        child: CircleAvatar(
-                          radius: 4,
-                          backgroundColor: Colors.white,
-                          foregroundColor: entry.key == carouselIndex
-                              ? Colors.black
-                              : Colors.grey,
-                          child: Text(
-                            entry.key == carouselIndex ? '\u2022' : '\u25E6',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                      );
-                    }).toList(),
-                  ),*/
+  VideoCard({required this.videoTitle, required this.videoUrl, this.onTap});
+
+  @override
+  _VideoCardState createState() => _VideoCardState();
+}
+
+class _VideoCardState extends State<VideoCard> {
+  late VideoPlayerController _controller;
+  late Future<void> _initializeVideoPlayerFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.network(widget.videoUrl);
+    initializeVideoPlayerFuture = _controller.initialize().then(() {
+      setState(() {}); // Trigger a rebuild once the video is initialized
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _toggleVideoPlayback() {
+    if (_controller.value.isPlaying) {
+      _controller.pause();
+    } else {
+      _controller.play();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        _toggleVideoPlayback();
+      },
+      child: Container(
+        width: 200.0,
+        margin: EdgeInsets.all(8.0),
+        child: AspectRatio(
+          aspectRatio: _controller.value.aspectRatio,
+          child: VideoPlayer(_controller),
+        ),
+      ),
+    );
+  }
+}*/
