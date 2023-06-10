@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
+import 'package:ricoz_app/pages/cart_page_item.dart';
+import 'package:ricoz_app/pages/checkout.dart';
 import 'package:ricoz_app/pages/home_page.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
@@ -9,12 +9,33 @@ import 'package:ricoz_app/pages/search_page.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
-
   @override
   State<Cart> createState() => _CartState();
 }
 
 class _CartState extends State<Cart> {
+  TextEditingController _promoCodeController = TextEditingController();
+  bool _showPromoCodes = false;
+  String _appliedPromoCode = '';
+
+  final List _availablePromoCodes = [
+    PromoCode(
+      name: 'Personal Offer',
+      code: 'mypromocode2020',
+      imagePath: 'assets/promocode1.png',
+    ),
+    PromoCode(
+      name: 'Summer Sale',
+      code: 'summer2020',
+      imagePath: 'assets/promocode2.png',
+    ),
+    PromoCode(
+      name: 'Personal Offer',
+      code: 'mypromocode2023',
+      imagePath: 'assets/promocode3.png',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,225 +91,128 @@ class _CartState extends State<Cart> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: const EdgeInsets.only(left: 15, top: 30),
                     child: Text(
                       'My Cart',
                       style:
-                          TextStyle(fontSize: 35, fontWeight: FontWeight.w700),
+                          TextStyle(fontSize: 34, fontWeight: FontWeight.w600),
                     ),
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 20),
-                        child: Image.asset(
-                          'assets/dmp.png',
-                          height: 140,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Digital Marketing\npackage',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 19,
-                                  letterSpacing: 1.5),
+                  const CartItem(),
+                  const CartItem(),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _showPromoCodes = false;
+                      });
+                    },
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          TextField(
+                            controller: _promoCodeController,
+                            decoration: InputDecoration(
+                              hintText: '      Enter Promo Code',
                             ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              '₹ XX,499',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 18,
-                                  letterSpacing: .5),
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              'Available',
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 89, 207, 150),
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: .5),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              'Buy more save more, upto ₹750',
-                              style: TextStyle(
-                                  color:
-                                      const Color.fromARGB(255, 29, 132, 216),
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 12),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Stack(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              width: 138,
-                              height: 38,
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 203, 202, 202),
-                                  borderRadius: BorderRadius.circular(5)),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 18),
-                              child: SizedBox(
-                                height: 40,
-                                width: 40,
-                                child: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(Icons.delete_outline_sharp)),
+                            onTap: () {
+                              setState(() {
+                                _showPromoCodes = true;
+                              });
+                            },
+                          ),
+                          SizedBox(height: 10),
+                          Visibility(
+                            visible: _showPromoCodes,
+                            child: Container(
+                              height: 300,
+                              width: double.infinity,
+                              color: Colors.grey[200],
+                              child: ListView.builder(
+                                itemCount: _availablePromoCodes.length,
+                                itemBuilder: (context, index) {
+                                  final promoCode = _availablePromoCodes[index];
+
+                                  return ListTile(
+                                    leading: Image.asset(
+                                      promoCode.imagePath,
+                                      height: 80,
+                                      width: 80,
+                                    ),
+                                    title: Text(promoCode.name,
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w500)),
+                                    subtitle: Text(promoCode.code,
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400)),
+                                    onTap: () {
+                                      setState(() {
+                                        _appliedPromoCode = promoCode.name;
+                                        _promoCodeController.text =
+                                            _appliedPromoCode;
+                                        _showPromoCodes = false;
+                                      });
+                                    },
+                                  );
+                                },
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 21),
-                              child: Container(
-                                width: 50,
-                                height: 35,
-                                color: Colors.white,
-                                child: Center(
-                                  child: Text(
-                                    '1',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 25),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 3,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 20),
-                              child: SizedBox(
-                                height: 40,
-                                width: 40,
-                                child: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.add_circle_outline,
-                                    )),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 20),
-                              child: Container(
-                                height: 30,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey)),
-                                child: Center(
-                                  child: Text(
-                                    'Delete',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 20),
-                              child: Container(
-                                height: 30,
-                                width: 110,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    color: Colors.white,
-                                    border: Border.all(color: Colors.grey)),
-                                child: Center(
-                                  child: Text(
-                                    'Safe for later',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  Stack(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 330,
-                            height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                  hintText: '  Enter your promo code',
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  enabledBorder: OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.white))),
                             ),
                           ),
-                          Container(
-                            height: 35,
-                            width: 35,
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(30)),
-                            child: Padding(
-                              padding: const EdgeInsets.only(bottom: 10),
-                              child: Container(
-                                width: 50,
-                                height: 30,
-                                child: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.arrow_forward,
-                                      color: Colors.white,
-                                    )),
-                              ),
-                            ),
-                          )
+                          const SizedBox(height: 10),
+                          Text('Applied Promo Code:  $_appliedPromoCode',
+                              style: const TextStyle(
+                                  color: Color.fromARGB(255, 115, 112, 112))),
                         ],
                       ),
+                    ),
+                  ),
+                  const SizedBox(height: 28),
+                  const Row(
+                    children: [
+                      SizedBox(width: 16),
+                      Text('Total Amount :',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 115, 112, 112),
+                              fontSize: 16)),
+                      SizedBox(width: 160),
+                      Icon(Icons.currency_rupee),
+                      Text('39,999',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w600)),
+                      SizedBox(height: 25),
                     ],
-                  )
+                  ),
+                  SizedBox(height: 25),
+                  Center(
+                    child: SizedBox(
+                      height: 50,
+                      width: 300,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  const Color.fromRGBO(68, 1, 1, 1),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30))),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const CheckOut(),
+                                ));
+                          },
+                          child: const Text(
+                            'Checkout',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontFamily: 'Roboto Slab',
+                                fontWeight: FontWeight.bold),
+                          )),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
@@ -312,11 +236,11 @@ class _CartState extends State<Cart> {
                         child: Ink(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
-                            color: Color.fromARGB(255, 89, 84, 84),
+                            color: const Color.fromARGB(255, 89, 84, 84),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 40),
-                            child: const Image(
+                          child: const Padding(
+                            padding: EdgeInsets.only(left: 40),
+                            child: Image(
                                 image: AssetImage('assets/homeimg.jpg'),
                                 width: 20,
                                 height: 20),
@@ -335,9 +259,9 @@ class _CartState extends State<Cart> {
                             borderRadius: BorderRadius.circular(10.0),
                             color: Color.fromARGB(255, 0, 0, 0),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 50),
-                            child: const Image(
+                          child: const Padding(
+                            padding: EdgeInsets.only(left: 50),
+                            child: Image(
                                 image: AssetImage('assets/searchon.jpg'),
                                 width: 20,
                                 height: 20),
@@ -354,11 +278,11 @@ class _CartState extends State<Cart> {
                         child: Ink(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
-                            color: Color.fromARGB(255, 89, 84, 84),
+                            color: const Color.fromARGB(255, 89, 84, 84),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 40),
-                            child: const Image(
+                          child: const Padding(
+                            padding: EdgeInsets.only(left: 40),
+                            child: Image(
                                 image: AssetImage('assets/discount.png'),
                                 width: 20,
                                 height: 20),
@@ -373,7 +297,7 @@ class _CartState extends State<Cart> {
                           style: ElevatedButton.styleFrom(
                               shadowColor: Colors.transparent,
                               backgroundColor:
-                                  Color.fromARGB(174, 235, 235, 235),
+                                  const Color.fromARGB(174, 235, 235, 235),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50))),
                           onPressed: () {},
@@ -383,11 +307,11 @@ class _CartState extends State<Cart> {
                                 "assets/cart2.png",
                                 width: 20,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 05,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 2),
+                              const Padding(
+                                padding: EdgeInsets.only(top: 2),
                                 child: Text("Orders",
                                     style: TextStyle(
                                         fontSize: 16,
@@ -409,3 +333,59 @@ class _CartState extends State<Cart> {
     );
   }
 }
+
+class PromoCode {
+  final String name;
+  final String code;
+  final String imagePath;
+
+  PromoCode({
+    required this.name,
+    required this.code,
+    required this.imagePath,
+  });
+}
+/*Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                const SizedBox(width: 16),
+                                                Image.asset(
+                                                  promoCode.imagePath,
+                                                  height: 80,
+                                                  width: 80,
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 14.0),
+                                                  child: Column(
+                                                    children: [
+                                                      Text(promoCode.name,
+                                                          style: const TextStyle(
+                                                              fontSize: 15,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600)),
+                                                      SizedBox(height: 5),
+                                                      Text(promoCode.code,
+                                                          style: const TextStyle(
+                                                              fontSize: 13,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400))
+                                                    ],
+                                                  ),
+                                                ),
+                                                SizedBox(height: 50),
+                                                Container(
+                                                    width: 93,
+                                                    height: 36,
+                                                    decoration: BoxDecoration(
+                                                        color: Color.fromRGBO(
+                                                            68, 1, 1, 1),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(25)))
+                                              ],
+                                            ),*/

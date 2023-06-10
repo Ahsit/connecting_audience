@@ -775,7 +775,7 @@ class _ServiceAdsManageState extends State<ServiceAdsManage> {
                                                 fontWeight: FontWeight.bold),
                                           )),
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
