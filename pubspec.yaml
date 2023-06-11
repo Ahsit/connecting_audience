@@ -9,11 +9,11 @@ environment:
   sdk: '>=2.19.6 <3.0.0'
 
 dependencies:
+  animate_do: ^3.0.2
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.6.1
   firebase_core: ^2.13.0
-  video_player: ^2.6.1
   flutter:
     sdk: flutter
   flutter_facebook_auth: ^5.0.11
@@ -21,7 +21,8 @@ dependencies:
   google_sign_in: ^6.1.2
   http: ^0.13.5
   local_auth: ^2.1.6
-  
+  video_player: ^2.6.1
+  flutter_animated_button: ^2.0.3
 
 dev_dependencies:
   dotted_border: ^2.0.0+3
