@@ -2,9 +2,11 @@
 
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ricoz_app/Screen/start%20screens/Ist_screen.dart';
 import 'package:ricoz_app/Services/colors.dart';
+import 'package:ricoz_app/pages/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,10 +20,17 @@ class _SplashScreen extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
+    final user = FirebaseAuth.instance.currentUser;
     Timer(
-        const Duration(seconds: 2),
-        () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const IstScreen())));
+      const Duration(seconds: 2),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => user == null ? const IstScreen() : HomePage(),
+        ),
+      ),
+    );
   }
 
   @override

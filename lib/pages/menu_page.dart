@@ -17,7 +17,7 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo[50],
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(68, 1, 1, 1),
         automaticallyImplyLeading: false,
@@ -37,7 +37,7 @@ class _MenuPageState extends State<MenuPage> {
                 ),
               );
             },
-            icon: Icon(Icons.help),
+            icon: const Icon(Icons.help),
           ),
         ],
       ),
@@ -45,17 +45,17 @@ class _MenuPageState extends State<MenuPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 21),
+            const SizedBox(height: 13),
             Center(
               child: Container(
-                width: 350,
+                width: 360,
                 height: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   gradient: const LinearGradient(
                     colors: [
                       Color.fromRGBO(68, 1, 1, 1),
-                      Color.fromARGB(255, 142, 107, 107)
+                      Color.fromRGBO(68, 1, 1, 1)
                     ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -71,7 +71,7 @@ class _MenuPageState extends State<MenuPage> {
                         width: 40,
                         height: 40,
                       ),
-                      SizedBox(width: 12),
+                      const SizedBox(width: 12),
                       const Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +98,7 @@ class _MenuPageState extends State<MenuPage> {
                               'Nicky Johnson',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 13,
+                                fontSize: 15,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -122,10 +122,10 @@ class _MenuPageState extends State<MenuPage> {
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 20),
             Center(
               child: Container(
-                width: 350,
+                width: 360,
                 height: 60,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -143,7 +143,7 @@ class _MenuPageState extends State<MenuPage> {
             const SizedBox(height: 5),
             Center(
               child: Container(
-                width: 350,
+                width: 360,
                 height: 60,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -161,7 +161,7 @@ class _MenuPageState extends State<MenuPage> {
             const SizedBox(height: 5),
             Center(
               child: Container(
-                width: 350,
+                width: 360,
                 height: 60,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -176,10 +176,10 @@ class _MenuPageState extends State<MenuPage> {
                 }, 'assets/menu/about.png'),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Center(
               child: Container(
-                width: 350,
+                width: 360,
                 height: 60,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -194,10 +194,10 @@ class _MenuPageState extends State<MenuPage> {
                 }, 'assets/menu/secirity.png'),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Center(
               child: Container(
-                width: 350,
+                width: 360,
                 height: 60,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -206,10 +206,10 @@ class _MenuPageState extends State<MenuPage> {
                     context, 'Policies', () {}, 'assets/menu/policies.png'),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Center(
               child: Container(
-                width: 350,
+                width: 360,
                 height: 60,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -218,7 +218,7 @@ class _MenuPageState extends State<MenuPage> {
                     'assets/menu/profileset.png'),
               ),
             ),
-            const SizedBox(height: 60),
+            const SizedBox(height: 80),
             const Center(
               child: Text(
                 'V 1.9.0(25578)',
@@ -235,14 +235,14 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 Image.asset(
                   'assets/menu/youtube.png',
-                  height: 40,
-                  width: 40,
+                  height: 30,
+                  width: 30,
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Image.asset(
                   'assets/menu/insta.png',
-                  height: 40,
-                  width: 40,
+                  height: 30,
+                  width: 30,
                 ),
               ],
             ),

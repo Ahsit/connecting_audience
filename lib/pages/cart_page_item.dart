@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
 
 class CartItem extends StatelessWidget {
@@ -14,7 +16,7 @@ class CartItem extends StatelessWidget {
             child: Image.asset(
               'assets/dmp.png',
               height: 130,
-              width: 128,
+              width: 130,
             ),
           ),
           const Padding(
@@ -64,7 +66,7 @@ class CartItem extends StatelessWidget {
           )
         ],
       ),
-      SizedBox(
+      const SizedBox(
         height: 10,
       ),
       Padding(
@@ -77,7 +79,7 @@ class CartItem extends StatelessWidget {
                   width: 138,
                   height: 38,
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 203, 202, 202),
+                      color: const Color.fromARGB(255, 203, 202, 202),
                       borderRadius: BorderRadius.circular(5)),
                 ),
               ],
@@ -91,7 +93,7 @@ class CartItem extends StatelessWidget {
                     width: 40,
                     child: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.delete_outline_sharp)),
+                        icon: const Icon(Icons.delete_outline_sharp)),
                   ),
                 ),
                 Padding(
@@ -100,7 +102,7 @@ class CartItem extends StatelessWidget {
                     width: 50,
                     height: 35,
                     color: Colors.white,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         '1',
                         style: TextStyle(
@@ -109,7 +111,7 @@ class CartItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 3,
                 ),
                 Padding(
@@ -119,12 +121,12 @@ class CartItem extends StatelessWidget {
                     width: 40,
                     child: IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.add_circle_outline,
                         )),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Padding(
@@ -146,7 +148,7 @@ class CartItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Padding(
