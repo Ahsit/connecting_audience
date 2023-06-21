@@ -8,7 +8,6 @@ import 'package:ricoz_app/pages/help/help_page3.dart';
 import 'package:ricoz_app/pages/help/help_page4.dart';
 import 'package:ricoz_app/pages/help/help_page5.dart';
 import 'package:ricoz_app/pages/home_page.dart';
-import 'package:ricoz_app/pages/menu_page.dart';
 
 class Help6 extends StatelessWidget {
   const Help6({super.key});

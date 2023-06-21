@@ -33,6 +33,7 @@ import 'package:ricoz_app/Screen/courses/web_design.dart';
 import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
 import 'package:ricoz_app/pages/cart_page.dart';
+import 'package:ricoz_app/pages/components/bottomnavigation.dart';
 import 'package:ricoz_app/pages/components/carousel.dart';
 import 'package:ricoz_app/pages/expandedSection/About_us.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage> {
     'assets/courseslider/graphic.png',
   ];
 
-  bool _isExpanded = false;
+  bool _isExpanded = true;
 
   final List<String> _options = [
     'About Us',
@@ -145,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                       size: 30,
                     ))
               ],
-            )
+            ),
           ];
         },
         body: FadeIn(
@@ -154,7 +155,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               SingleChildScrollView(
                 child: SizedBox(
-                  height: 2830,
+                  height: 2800,
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -250,7 +251,8 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     buildSquareButton(
                                         'Social Media\nManagement',
-                                        'assets/image 158.png', (() {
+                                        'assets/service_icons/social media management.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -259,7 +261,8 @@ class _HomePageState extends State<HomePage> {
                                           ));
                                     })),
                                     buildSquareButton(' Google\nAdwords',
-                                        'assets/image 181.png', (() {
+                                        'assets/service_icons/google adwords.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -268,7 +271,8 @@ class _HomePageState extends State<HomePage> {
                                           ));
                                     })),
                                     buildSquareButton('Graphics\n  Design',
-                                        'assets/image 160.png', (() {
+                                        'assets/service_icons/graphics design.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -277,7 +281,8 @@ class _HomePageState extends State<HomePage> {
                                           ));
                                     })),
                                     buildSquareButton('        Ads\nManagement',
-                                        'assets/image 161.png', (() {
+                                        'assets/service_icons/ad management.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -293,7 +298,8 @@ class _HomePageState extends State<HomePage> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     buildSquareButton('   Ads\nManager',
-                                        'assets/image 165.png', (() {
+                                        'assets/service_icons/ads manager.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -303,7 +309,8 @@ class _HomePageState extends State<HomePage> {
                                     })),
                                     buildSquareButton(
                                         '    Website\nDevelopment',
-                                        'assets/image 166.png', (() {
+                                        'assets/service_icons/web development.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -312,7 +319,8 @@ class _HomePageState extends State<HomePage> {
                                           ));
                                     })),
                                     buildSquareButton('   Digital\nMarketing',
-                                        'assets/image 168.png', (() {
+                                        'assets/service_icons/digital marketing.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -322,7 +330,8 @@ class _HomePageState extends State<HomePage> {
                                     })),
                                     buildSquareButton(
                                         '    Shopify\nDevelopment',
-                                        'assets/image 170.png', (() {
+                                        'assets/service_icons/shopify development.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -452,7 +461,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     _buildCircleImage(
                                         'Social Media\n     Courses',
-                                        'assets/images/socialmediacourse.png',
+                                        'assets/course_icons/social media.png',
                                         (() {
                                       Navigator.push(
                                           context,
@@ -463,7 +472,7 @@ class _HomePageState extends State<HomePage> {
                                     })),
                                     _buildCircleImage(
                                         'Graphic Desigb\n       Courses',
-                                        'assets/images/graphicsdesigncourse.png',
+                                        'assets/course_icons/graphics design.png',
                                         (() {
                                       Navigator.push(
                                           context,
@@ -473,7 +482,7 @@ class _HomePageState extends State<HomePage> {
                                           ));
                                     })),
                                     _buildCircleImage('Web Design\n   Courses',
-                                        'assets/images/webdesigncourse.png',
+                                        'assets/course_icons/web design.png',
                                         (() {
                                       Navigator.push(
                                           context,
@@ -484,7 +493,8 @@ class _HomePageState extends State<HomePage> {
                                     })),
                                     _buildCircleImage(
                                         '         Ads\nManagement',
-                                        'assets/image 165.png', (() {
+                                        'assets/course_icons/ADS Management.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -500,7 +510,8 @@ class _HomePageState extends State<HomePage> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     _buildCircleImage(' Video\nEditing',
-                                        'assets/images/videoediting.png', (() {
+                                        'assets/course_icons/video editing.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -509,7 +520,8 @@ class _HomePageState extends State<HomePage> {
                                           ));
                                     })),
                                     _buildCircleImage('   Google\n  Adwords',
-                                        'assets/image 181.png', (() {
+                                        'assets/course_icons/google adwords.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -519,7 +531,7 @@ class _HomePageState extends State<HomePage> {
                                     })),
                                     _buildCircleImage(
                                         'Performance\n   Marketing',
-                                        'assets/images/marketmanagement.png',
+                                        'assets/course_icons/performance marketing.png',
                                         (() {
                                       Navigator.push(
                                           context,
@@ -529,7 +541,8 @@ class _HomePageState extends State<HomePage> {
                                           ));
                                     })),
                                     _buildCircleImage('    Digital\nMAerketing',
-                                        'assets/images/seachengine.png', (() {
+                                        'assets/course_icons/digital marketing.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -638,7 +651,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     _buildCircleImage(
                                       'Facebook',
-                                      'assets/logo17.png',
+                                      'assets/socialmedia_icons/facebook.png',
                                       (() {
                                         Navigator.push(
                                             context,
@@ -648,8 +661,9 @@ class _HomePageState extends State<HomePage> {
                                             ));
                                       }),
                                     ),
-                                    _buildCircleImage(
-                                        'Instagram', 'assets/logo18.png', (() {
+                                    _buildCircleImage('Instagram',
+                                        'assets/socialmedia_icons/instagram.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -657,8 +671,9 @@ class _HomePageState extends State<HomePage> {
                                                 const Instagram(),
                                           ));
                                     })),
-                                    _buildCircleImage(
-                                        'Linked in', 'assets/logo19.png', (() {
+                                    _buildCircleImage('Linked in',
+                                        'assets/socialmedia_icons/linkedin.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -666,8 +681,8 @@ class _HomePageState extends State<HomePage> {
                                                 const Linkedin(),
                                           ));
                                     })),
-                                    _buildCircleImage(
-                                        'Youtube', 'assets/logo20.png', (() {
+                                    _buildCircleImage('Youtube',
+                                        'assets/socialmedia_icons/YT.png', (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -682,8 +697,9 @@ class _HomePageState extends State<HomePage> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    _buildCircleImage(
-                                        'Twitter', 'assets/logo21.png', (() {
+                                    _buildCircleImage('Twitter',
+                                        'assets/socialmedia_icons/twitter.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -851,7 +867,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     _buildCircleImage(
                                       'Youtube\n    Ads',
-                                      'assets/logo20.png',
+                                      'assets/socialmedia_icons/YT.png',
                                       (() {
                                         Navigator.push(
                                             context,
@@ -861,8 +877,8 @@ class _HomePageState extends State<HomePage> {
                                             ));
                                       }),
                                     ),
-                                    _buildCircleImage(
-                                        'Google\n  Ads', 'assets/image 181.png',
+                                    _buildCircleImage('Google\n  Ads',
+                                        'assets/course_icons/google adwords.png',
                                         (() {
                                       Navigator.push(
                                           context,
@@ -872,7 +888,8 @@ class _HomePageState extends State<HomePage> {
                                           ));
                                     })),
                                     _buildCircleImage('FaceBook\n      Ads',
-                                        'assets/logo17.png', (() {
+                                        'assets/socialmedia_icons/facebook.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -881,7 +898,8 @@ class _HomePageState extends State<HomePage> {
                                           ));
                                     })),
                                     _buildCircleImage('Linked in\n     Ads',
-                                        'assets/logo19.png', (() {
+                                        'assets/socialmedia_icons/linkedin.png',
+                                        (() {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -899,7 +917,8 @@ class _HomePageState extends State<HomePage> {
                                           left: 30, right: 30),
                                       child: _buildCircleImage(
                                           'Instagram\n      Ads',
-                                          'assets/logo18.png', (() {
+                                          'assets/socialmedia_icons/instagram.png',
+                                          (() {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
@@ -908,8 +927,8 @@ class _HomePageState extends State<HomePage> {
                                             ));
                                       })),
                                     ),
-                                    _buildCircleImage(
-                                        'Twitter\n  Ads', 'assets/logo21.png',
+                                    _buildCircleImage('Twitter\n  Ads',
+                                        'assets/socialmedia_icons/twitter.png',
                                         (() {
                                       Navigator.push(
                                           context,
@@ -1529,16 +1548,16 @@ Widget buildSquareButton(
         children: [
           Image.asset(
             imagePath,
-            width: 25,
-            height: 25,
+            width: 35,
+            height: 35,
           ),
           SizedBox(height: 10),
           Text(
             buttonText,
             style: TextStyle(
-              color: Color.fromRGBO(99, 98, 98, 1),
+              color: Color.fromRGBO(5, 5, 5, 1),
               fontSize: 10,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],
@@ -1565,8 +1584,8 @@ Widget _buildCircleImage(String label, String img, VoidCallback press) {
           child: Center(
             child: Image.asset(
               img,
-              width: 45,
-              height: 45,
+              width: 40,
+              height: 40,
             ),
           ),
         ),
@@ -1579,7 +1598,7 @@ Widget _buildCircleImage(String label, String img, VoidCallback press) {
           style: TextStyle(
             fontSize: 11,
             fontWeight: FontWeight.w500,
-            color: Color.fromRGBO(126, 125, 125, 1),
+            color: Color.fromRGBO(0, 0, 0, 1),
           ),
         ),
       ),

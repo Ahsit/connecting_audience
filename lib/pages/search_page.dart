@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/pages/Notification_page.dart';
 import 'package:ricoz_app/pages/cart_page.dart';
+
 import 'package:ricoz_app/pages/home_page.dart';
 import 'package:ricoz_app/pages/menu_page.dart';
 import 'package:ricoz_app/pages/offers_page.dart';
@@ -143,7 +144,7 @@ class _SearchPageState extends State<SearchPage> {
                           children: [
                             _buildCircleImage(
                               'Social Media\nManagement',
-                              'assets/image 158.png',
+                              'assets/image 165.png',
                               (() {
                                 Navigator.push(
                                   context,
@@ -154,7 +155,7 @@ class _SearchPageState extends State<SearchPage> {
                               }),
                             ),
                             _buildCircleImage(
-                                ' Google\nAdwords', 'assets/image 181.png',
+                                ' Google\nAdwords', 'assets/image 165.png',
                                 (() {
                               Navigator.push(
                                   context,
@@ -164,7 +165,7 @@ class _SearchPageState extends State<SearchPage> {
                                   ));
                             })),
                             _buildCircleImage(
-                                'Graphics\n  Design', 'assets/image 160.png',
+                                'Graphics\n  Design', 'assets/image 165.png',
                                 (() {
                               Navigator.push(
                                   context,
@@ -174,7 +175,7 @@ class _SearchPageState extends State<SearchPage> {
                                   ));
                             })),
                             _buildCircleImage('        Ads\nManagement',
-                                'assets/image 161.png', (() {
+                                'assets/image 165.png', (() {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -198,7 +199,7 @@ class _SearchPageState extends State<SearchPage> {
                                   ));
                             })),
                             _buildCircleImage('    Website\nDevelopment',
-                                'assets/image 166.png', (() {
+                                'assets/image 165.png', (() {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -206,7 +207,7 @@ class _SearchPageState extends State<SearchPage> {
                                   ));
                             })),
                             _buildCircleImage(
-                                '   Digital\nMarketing', 'assets/image 168.png',
+                                '   Digital\nMarketing', 'assets/image 165.png',
                                 (() {
                               Navigator.push(
                                   context,
@@ -216,7 +217,7 @@ class _SearchPageState extends State<SearchPage> {
                                   ));
                             })),
                             _buildCircleImage('    Shopify\nDevelopment',
-                                'assets/image 170.png', (() {
+                                'assets/image 165.png', (() {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(

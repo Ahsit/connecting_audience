@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:ricoz_app/Services/colors.dart';
 import 'package:ricoz_app/pages/password/forgot_password.dart';
-import 'package:ricoz_app/pages/login_page.dart';
+
 import 'package:ricoz_app/pages/password/verify_otp.dart';
 
 class RecoverPassword2 extends StatefulWidget {

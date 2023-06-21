@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ricoz_app/pages/Notification_page.dart';
+import 'package:ricoz_app/pages/deals_and_trasaction.dart';
 import 'package:ricoz_app/pages/expandedSection/About_us.dart';
+import 'package:ricoz_app/pages/feedback.dart';
 import 'package:ricoz_app/pages/help/help_page.dart';
-import 'package:ricoz_app/pages/privacy_security.dart';
-import 'package:ricoz_app/pages/profile_settings.dart';
-import 'package:ricoz_app/pages/recharge&renew/recharge.dart';
+import 'package:ricoz_app/pages/setting.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({Key? key}) : super(key: key);
@@ -17,280 +16,229 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(68, 1, 1, 1),
         automaticallyImplyLeading: false,
-        title: Image.asset(
-          'assets/image 1 (4).png',
-          width: 110,
-          height: 50,
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Help(),
-                ),
-              );
-            },
-            icon: const Icon(Icons.help),
-          ),
-        ],
+        toolbarHeight: 20,
+        shadowColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(185, 68, 1, 1),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 13),
-            Center(
-              child: Container(
-                width: 360,
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color.fromRGBO(68, 1, 1, 1),
-                      Color.fromRGBO(68, 1, 1, 1)
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                ),
+      body: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(),
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 18, vertical: 25),
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        'assets/image 126 (4).png',
-                        width: 40,
-                        height: 40,
-                      ),
-                      const SizedBox(width: 12),
-                      const Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Welcome Back',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 19,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(width: 7),
-                                Icon(
-                                  Icons.waving_hand_rounded,
-                                  color: Colors.yellow,
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              'Nicky Johnson',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Notifications(),
-                            ),
-                          );
-                        },
-                        icon: const Icon(Icons.notifications_active,
-                            color: Colors.white, size: 30),
-                      ),
-                    ],
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Image.asset(
+                    'assets/profile.png',
+                    height: 70,
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Center(
-              child: Container(
-                width: 360,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: buildMenuOption(context, 'Profile Settings', () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ProfileDetails(),
+              const SizedBox(
+                width: 90,
+              ),
+              const Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    '            Iphshita Kaur',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    'ipshitakaur10@gmail.com',
+                    style: TextStyle(
+                      fontSize: 15,
                     ),
-                  );
-                }, 'assets/menu/profileset.png'),
+                  )
+                ],
               ),
-            ),
-            const SizedBox(height: 5),
-            Center(
-              child: Container(
-                width: 360,
-                height: 60,
+              const SizedBox(
+                width: 30,
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 20,
+                width: 70,
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: buildMenuOption(context, 'Orders and Bookings', () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const RechargeRenew(),
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(40)),
+                child: const Center(
+                  child: Text(
+                    'Chat Bot',
+                    style: TextStyle(
+                      fontSize: 14,
                     ),
-                  );
-                }, 'assets/menu/orders.png'),
-              ),
-            ),
-            const SizedBox(height: 5),
-            Center(
-              child: Container(
-                width: 360,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: buildMenuOption(context, 'About Us', () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AboutUs(),
-                    ),
-                  );
-                }, 'assets/menu/about.png'),
-              ),
-            ),
-            const SizedBox(height: 5),
-            Center(
-              child: Container(
-                width: 360,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: buildMenuOption(context, 'Privacy & Security', () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SecurityPassword(),
-                    ),
-                  );
-                }, 'assets/menu/secirity.png'),
-              ),
-            ),
-            const SizedBox(height: 5),
-            Center(
-              child: Container(
-                width: 360,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: buildMenuOption(
-                    context, 'Policies', () {}, 'assets/menu/policies.png'),
-              ),
-            ),
-            const SizedBox(height: 5),
-            Center(
-              child: Container(
-                width: 360,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: buildMenuOption(context, '24*7 Help & Support', () {},
-                    'assets/menu/profileset.png'),
-              ),
-            ),
-            const SizedBox(height: 80),
-            const Center(
-              child: Text(
-                'V 1.9.0(25578)',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              const SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 20,
+                width: 70,
+                decoration: BoxDecoration(
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(40)),
+                child: const Center(
+                  child: Text(
+                    'Support',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 20,
+                width: 50,
+                decoration: BoxDecoration(
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(40)),
+                child: const Center(
+                  child: Text(
+                    'FAQ',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            width: 360,
+            height: 180,
+            decoration: BoxDecoration(
+                color: const Color(0x39DDDDDD),
+                borderRadius: BorderRadius.circular(15)),
+            child: ListView(
               children: [
-                Image.asset(
-                  'assets/menu/youtube.png',
-                  height: 30,
-                  width: 30,
-                ),
-                const SizedBox(width: 10),
-                Image.asset(
-                  'assets/menu/insta.png',
-                  height: 30,
-                  width: 30,
-                ),
+                buildMenuOption(context, 'Settings', () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Setting(),
+                      ));
+                }, Icons.settings),
+                buildMenuOption(context, 'About', () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AboutUs(),
+                      ));
+                }, Icons.info),
+                buildMenuOption(context, 'Payment', () {}, Icons.payment),
+                buildMenuOption(context, 'Deals and trasactions', () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DealAndTrasaction(),
+                      ));
+                }, Icons.timelapse),
               ],
             ),
-            const SizedBox(height: 80),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          Container(
+            width: 360,
+            height: 180,
+            decoration: BoxDecoration(
+                color: const Color(0x39DDDDDD),
+                borderRadius: BorderRadius.circular(15)),
+            child: ListView(
+              children: [
+                buildMenuOption(context, 'ChatBot', () {},
+                    Icons.chat_bubble_outline_rounded),
+                buildMenuOption(context, 'Customer Support', () {}, Icons.call),
+                buildMenuOption(context, 'Frequently Asked Question', () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Help(),
+                      ));
+                }, Icons.help),
+                buildMenuOption(context, 'Feedback', () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FeedbackPage(),
+                      ));
+                }, Icons.feed),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Center(
+              child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shadowColor: Colors.transparent),
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.exit_to_app,
+                    color: Color.fromARGB(255, 88, 88, 88),
+                  ),
+                  label: const Text(
+                    "LogOut",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 58, 58, 58),
+                      fontSize: 15,
+                    ),
+                  )))
+        ],
       ),
     );
   }
 
   Widget buildMenuOption(
-      BuildContext context, String text, VoidCallback press, String img) {
+      BuildContext context, String text, VoidCallback press, IconData icons) {
     return InkWell(
       onTap: press,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset(img, width: 55, height: 55),
-            const SizedBox(width: 20),
+            Icon(
+              icons,
+              size: 24,
+            ),
+            const SizedBox(width: 10),
             Expanded(
               flex: 1,
               child: Text(
                 text,
                 style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
+                  color: Color.fromARGB(255, 89, 89, 89),
+                  fontSize: 17,
                   fontWeight: FontWeight.w400,
                 ),
               ),
             ),
-            const Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: Colors.black,
-            ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget buildSeparator() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18),
-      child: Container(
-        height: 0.3,
-        color: Colors.grey[700],
       ),
     );
   }

@@ -12,17 +12,19 @@ dependencies:
   animate_do: ^3.0.2
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.2
+  curved_navigation_bar: ^1.0.3
   firebase_auth: ^4.6.1
   firebase_core: ^2.13.0
   flutter:
     sdk: flutter
+  flutter_animated_button: ^2.0.3
   flutter_facebook_auth: ^5.0.11
   flutter_svg: ^1.1.6
   google_sign_in: ^6.1.2
   http: ^0.13.5
   local_auth: ^2.1.6
   video_player: ^2.6.1
-  flutter_animated_button: ^2.0.3
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   dotted_border: ^2.0.0+3
@@ -40,6 +42,9 @@ flutter:
     - assets/image 125 (4).png
     - assets/
     - assets/course/
+    - assets/course_icons/
+    - assets/service_icons/
+    - assets/socialmedia_icons/
     - assets/courseslider/
     - assets/Handling/
     - assets/ads/
@@ -47,6 +52,7 @@ flutter:
     - assets/review/
     - assets/videos/
     - assets/menu/
+    
 
   fonts:
     - family: Cormorant Garamond
