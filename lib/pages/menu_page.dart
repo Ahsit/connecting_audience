@@ -21,7 +21,7 @@ class _MenuPageState extends State<MenuPage> {
         automaticallyImplyLeading: false,
         toolbarHeight: 20,
         shadowColor: Colors.transparent,
-        backgroundColor: Color.fromARGB(185, 68, 1, 1),
+        backgroundColor: const Color.fromARGB(185, 68, 1, 1),
       ),
       body: Column(
         children: [
@@ -41,24 +41,27 @@ class _MenuPageState extends State<MenuPage> {
               const SizedBox(
                 width: 90,
               ),
-              const Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    '            Iphshita Kaur',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    'ipshitakaur10@gmail.com',
-                    style: TextStyle(
-                      fontSize: 15,
+              const Padding(
+                padding: EdgeInsets.only(right: 30),
+                child: Column(
+                  children: [
+                    Text(
+                      '            Iphshita Kaur',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
-                  )
-                ],
+                    Text(
+                      'ipshitakaur10@gmail.com',
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    )
+                  ],
+                ),
               ),
-              const SizedBox(
-                width: 30,
-              )
+              // const SizedBox(
+              //   width: 30,
+              // )
             ],
           ),
           const SizedBox(
@@ -127,7 +130,7 @@ class _MenuPageState extends State<MenuPage> {
             width: 360,
             height: 180,
             decoration: BoxDecoration(
-                color: const Color(0x39DDDDDD),
+                color: Color(0x39BBBABA),
                 borderRadius: BorderRadius.circular(15)),
             child: ListView(
               children: [
@@ -163,7 +166,7 @@ class _MenuPageState extends State<MenuPage> {
             width: 360,
             height: 180,
             decoration: BoxDecoration(
-                color: const Color(0x39DDDDDD),
+                color: const Color(0x39BBBABA),
                 borderRadius: BorderRadius.circular(15)),
             child: ListView(
               children: [

@@ -41,9 +41,11 @@ flutter:
     - assets/image 1 (3).png
     - assets/image 125 (4).png
     - assets/
+    - assets/adsmanagement_icons/
     - assets/course/
     - assets/course_icons/
     - assets/service_icons/
+    - assets/handling_icon/
     - assets/socialmedia_icons/
     - assets/courseslider/
     - assets/Handling/
